@@ -1,0 +1,10 @@
+<% content_for :head do %>
+	<h1>Editing year</h1>
+<% end %>
+
+<% content_for :main do %>
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @year %> |
+	<%= link_to 'Back', years_path %>
+<% end %>

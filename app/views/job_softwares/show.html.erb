@@ -1,0 +1,19 @@
+<% content_for :head do %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<% content_for :main do %>
+	<p>
+	  <b>Job:</b>
+	  <%= @job_software.job_id %>
+	</p>
+
+	<p>
+	  <b>Software:</b>
+	  <%= @job_software.software_id %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_job_software_path(@job_software) %> |
+	<%= link_to 'Back', job_softwares_path %>
+<% end %>

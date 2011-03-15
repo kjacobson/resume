@@ -1,0 +1,25 @@
+<%= form_for(@job_year) do |f| %>
+  <% if @job_year.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job_year.errors.count, "error") %> prohibited this job_year from being saved:</h2>
+
+      <ul>
+      <% @job_year.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :job_id %><br />
+    <%= f.text_field :job_id %>
+  </div>
+  <div class="field">
+    <%= f.label :year_id %><br />
+    <%= f.text_field :year_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

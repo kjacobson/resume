@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Resume</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--<link rel="stylesheet" type="text.css" href="reset/css" />-->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/typography.css" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+	</head>
+	<body>
+	    <header>
+			<p><%= flash[:notice] %></p>
+			<nav>
+				<%= render :partial => 'home/breadcrumbs' %>
+			</nav>
+			<%= yield :head %>
+	    </header>
+			<%= yield :main %>
+		<footer></footer>
+	</body>
+</html>

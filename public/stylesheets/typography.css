@@ -1,0 +1,46 @@
+/*
+ * SCALE:
+ * 0.6em
+ * 0.7em
+ * 0.8em
+ * 0.9em
+ * 1.0em
+ * 1.1em
+ * 1.2em
+ * 1.4em
+ * 1.8em
+ * 2.1em
+ * 2.4em
+ * 3.6em
+ * 4.8em
+ * 7.2em
+ */
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+}
+
+	header h1 {
+		font-size: 4.8em;
+		font-weight: normal;
+	}
+	header h2 {
+		font-size: 2.4em;
+		font-weight: normal;
+	}
+	header nav a {
+		font-size: 2.1em;
+	}
+
+	section h1 {
+		font-size: 3.6em;
+		font-weight: normal;
+	}
+	section.primary p {
+		font-size: 1.4em;
+		line-height: 1.5em;
+	}
+		section.primary .job-list .job-title {
+			font-size: 1.8em;
+		}

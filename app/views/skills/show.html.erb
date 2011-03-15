@@ -1,0 +1,22 @@
+<% content_for :head do %>
+	<h1 class="primary-type-title skill-title">
+	  <%= @skill.title %>
+	</h1>
+<% end %>
+
+<% content_for :main do %>
+	<section class="primary">
+		<h1>Positions involving <%= @skill.title %></h1>
+		<%= render :partial => 'jobs/small_list' %>
+
+		<% if current_user %>
+			<%= link_to 'Edit', edit_skill_path(@skill) %> |
+			<%= link_to 'Back', skills_path %>
+		<% end %>
+	</section>
+
+	<section class="secondary">
+		<h1>Years this skill was used</h1>
+		<%= render :partial => 'years/list' %>
+	</section>
+<% end %>

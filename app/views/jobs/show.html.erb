@@ -1,0 +1,72 @@
+<% content_for :head do %>
+	<h1 class="primary-type-title job-title">
+	  <%= @job.title %>
+	</h1>
+<% end %>
+
+<% content_for :main do %>
+	<section class="primary details job-details">
+		<p>
+		  <%= @job.short_desc %>
+		</p>
+
+		<h1>Details</h1>
+		<h2>Employer:</h2>
+		<%= @job.employer %>
+
+		<% if !@job.status.nil? and @job.status != "" %>
+		  <h2>Status:</h2>
+		  <%= @job.status %>
+		<% end %>
+
+		<% if !@job.project.nil? and @job.project != "" %>
+		  <h2>Project:</h2>
+		  <%= @job.project %>
+		<% end %>
+
+		<% if !@job.url.nil? and @job.url != "" %>
+		  <h2>URL:</h2>
+		  <a href="<%= @job.url %>" rel="external" title="View this project">
+			  <%= @job.url %>
+		  </a>
+		<% end %>
+
+		<h2>Started:</h2>
+		<%= get_month(@job.start_month) %><% if !@job.start_month.nil? and !@job.start_year.nil? %>, <% end %>
+		<%= render :partial => 'years/link_to_year', :locals => {:year => @job.start_year} %>
+
+		<h2>Ended:</h2>
+		<%= get_month(@job.end_month) %><% if !@job.end_month.nil? and !@job.end_year.nil? %>, <% end %>
+		<%= render :partial => 'years/link_to_year', :locals => {:year => @job.end_year} %>
+
+		<h2>Summary:</h2>
+		<p>
+			<%= @job.long_desc %>
+		</p>
+	</section>
+
+	<section class="secondary associations associatedHighlights">
+		<% if @highlights.count >= 1 %>
+			<h1>Highlights:</h1>
+			<%= render :partial => 'highlights/list' %>
+		<% end %>
+	</section>
+
+	<section class="secondary associations associatedSkills">
+		<% if @skills.count >= 1 %>
+			<h1>Skills used:</h1>
+			<% if !@disciplines.nil? and @disciplines.count >= 1 %>
+				<%= render :partial => 'skills/small_list_by_discipline', :locals => {:disciplines => @disciplines, :skills => @skills} %>
+			<% else %>
+				<%= render :partial => 'skills/small_list', :locals => {:skills => @skills} %>
+			<% end %>
+		<% end %>
+	</section>
+
+	<section class="secondary associations associatedSoftware">
+		<% if @softwares.count >= 1 %>
+			<h1>Software used:</h1>
+			<%= render :partial => 'softwares/list' %>
+		<% end %>
+	</section>
+<% end %>

@@ -1,0 +1,14 @@
+<% content_for :head do %>
+	<h1>
+	  <%= @software.title %>
+	</h1>
+<% end %>
+
+<% content_for :main do %>
+	<h2>Positions involving <%= @software.title %></h2>
+	<%= render :partial => 'jobs/small_list' %>
+
+
+	<%= link_to 'Edit', edit_software_path(@software) %> |
+	<%= link_to 'Back', softwares_path %>
+<% end %>

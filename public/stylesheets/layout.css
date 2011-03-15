@@ -1,0 +1,45 @@
+/*
+ * BASE GRID
+ * 100% / 10 = 10%
+ *             10% = (1.25% + 8.75%)
+ */
+
+/* LAYOUT MODULES */
+body {
+	height: auto;
+	min-height: 100%;
+	width: 100%;
+}
+	header {
+		margin: 0 1.25%;
+		overflow: hidden;
+		padding-top: 1.25%;
+	}
+		header hgroup {
+			float: left;
+			width: 57.7%;
+		}
+	section.primary {
+		clear: left;
+		float: left;
+		margin: 0 1.25%;
+		width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
+	}
+	section.secondary {
+		clear: right;
+		float: right;
+		margin: 0 1.25%;
+		width: 37.5%; /* 2 full columns. 2 columns subtracting gutters */
+	}
+	footer {
+		margin: 0 1.25%;
+	}
+
+/* LISTS */
+.highlight-list,
+.job-list,
+.skill-list,
+.software-list,
+.year-list {
+	list-style-type: none;
+}

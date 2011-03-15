@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  employer: MyString
+  project: MyString
+  url: MyString
+  start_date: 1
+  end_date: 1
+  short_desc: MyText
+  long_desc: MyText
+
+two:
+  title: MyString
+  employer: MyString
+  project: MyString
+  url: MyString
+  start_date: 1
+  end_date: 1
+  short_desc: MyText
+  long_desc: MyText

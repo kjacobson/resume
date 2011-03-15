@@ -1,0 +1,46 @@
+<table>
+  <tr>
+    <th>
+		<a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
+			Title
+		</a>
+	</th>
+    <th>
+		<a href="<%= sorting_href('employer',@order_by, @direction) %>" rel="canonical" title="Order by employer">
+			Employer
+		</a>
+	</th>
+    <th>
+		<a href="<%= sorting_href('start_year',@order_by, @direction) %>" rel="canonical" title="Order by start year">
+			Years
+		</a>
+	</th>
+    <th>
+		<a href="<%= sorting_href('short_desc',@order_by, @direction) %>" rel="canonical" title="Order by description">
+			Brief Description
+		</a>
+	</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td>
+		<a href="/jobs/<%= job.id %>" rel="internal" title="See details">
+			<%= job.title %>
+		</a>
+	</td>
+    <td><%= job.employer %></td>
+    <td>
+		<a href="/years/<%= job.start_year %>/" rel="internal" title="Positions held in <%= job.start_year %>"><%= job.start_year %></a>
+		&ndash;
+		<a href="/years/<%= job.end_year %>/" rel="internal" title="Positions held in <%= job.end_year %>"><%= job.end_year %></a>
+	</td>
+    <td><%= job.short_desc %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

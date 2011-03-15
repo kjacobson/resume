@@ -1,0 +1,13 @@
+<ol class="job-list">
+	<% @jobs.each do |job| %>
+		<li>
+			<a href="/jobs/<%= job.id %>" class="job-title" rel="internal" title="See details"><%= job.title %></a>
+			<p>
+				<%= job.employer %>,
+				<%= render :partial => 'years/link_to_year', :locals => {:year => job.start_year} %>
+				&ndash;
+				<%= render :partial => 'years/link_to_year', :locals => {:year => job.end_year} %>
+			</p>
+		</li>
+	<% end %>
+</ol>

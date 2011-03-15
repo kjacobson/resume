@@ -1,0 +1,29 @@
+<% content_for :head do %>
+	<h1>Listing job_softwares</h1>
+<% end %>
+
+<% content_for :main do %>
+	<table>
+	  <tr>
+		<th>Job</th>
+		<th>Software</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+
+	<% @job_softwares.each do |job_software| %>
+	  <tr>
+		<td><%= job_software.job_id %></td>
+		<td><%= job_software.software_id %></td>
+		<td><%= link_to 'Show', job_software %></td>
+		<td><%= link_to 'Edit', edit_job_software_path(job_software) %></td>
+		<td><%= link_to 'Destroy', job_software, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+
+	<%= link_to 'New Job software', new_job_software_path %>
+<% end %>

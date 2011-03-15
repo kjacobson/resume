@@ -1,0 +1,9 @@
+<% content_for :head do %>
+	<h1>New skill</h1>
+<% end %>
+
+<% content_For :main do %>
+	<%= render 'form' %>
+
+	<%= link_to 'Back', skills_path %>
+<% end %>
