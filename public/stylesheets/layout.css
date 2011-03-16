@@ -2,6 +2,15 @@
  * BASE GRID
  * 100% / 10 = 10%
  *             10% = (1.25% + 8.75%)
+ *
+ * Assume:
+ * 960 / 10 = 96
+ *            96 = (12 + 84)
+ *
+ * Assume:
+ * 1em = 16px
+ * line-height = 24px
+ * baseline = 6px
  */
 
 /* LAYOUT MODULES */
@@ -39,11 +48,6 @@ body {
         display: block;
         margin: 0 1.25%;
     }
-
-/* HEADINDS */
-h1, h2 {
-    margin: 0.75em 0 0.25em;
-}
 
 /* LISTS */
 .highlight-list,

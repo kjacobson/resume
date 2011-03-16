@@ -1,0 +1,10 @@
+body {
+    color: #444;
+}
+
+/* HEADINGS */
+h1 a:link,
+h1 a:active,
+h1 a:visited {
+    color: #444;
+}

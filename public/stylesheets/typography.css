@@ -1,57 +1,91 @@
 /*
  * SCALE:
- * 0.6em
- * 0.7em
- * 0.8em
- * 0.9em
- * 1.0em
- * 1.1em
- * 1.2em
- * 1.4em
- * 1.8em
- * 2.1em
- * 2.4em
- * 3.6em
- * 4.8em
- * 7.2em
+ * 0.375em   = 6
+ * 0.4375em  = 7
+ * 0.5em     = 8
+ * 0.5625em  = 9
+ * 0.625em   = 10
+ * 0.6875em  = 11
+ * 0.75em    = 12
+ * 0.875em   = 14
+ * 1.125em   = 18
+ * 1.3125em  = 21
+ * 1.5em     = 24
+ * 2.25em    = 36
+ * 3em       = 48
+ * 4.5em     = 72
+ *
+ * Assume:
+ * 1em = 16px
+ * line-height = 24px
+ * baseline = 6px
  */
 
 body {
     font-family: Arial, sans-serif;
-    font-size: 10px;
+    font-size: 100%;
     line-height: 1.5em;
 }
     header h1 {
-        font-size: 4.8em;
+        font-size: 3em;
         font-weight: normal;
         line-height: 1.5em;
+        margin: 0.75em 0 0;
     }
     header h2 {
-        font-size: 2.4em;
+        font-size: 1.5em;
         font-weight: normal;
         line-height: 1.5em;
+        margin: 0 0 0.5em;
     }
     header nav a {
-        font-size: 2.1em;
+        font-size: 1.3125em;
+        line-height: 1.42857em;
     }
 
     section h1 {
-        font-size: 2.4em;
+        font-size: 1.5em;
         font-weight: normal;
-        line-height: 1.2em;
+        line-height: 1.5em;
+        margin: 0.75em 0 0;
+    }
+    section h2 {
+        font-weight: normal;
     }
     section.primary p {
-        font-size: 1.4em;
+        font-size: 1em;
         line-height: 1.5em;
+        margin: 0 0 1em;
     }
         section.primary .job-list .job-title {
-            font-size: 1.8em;
+            font-size: 1.125em;
         }
-
-    section.secondary {
-        font-size: 1.4em;
+    section.secondary h2 {
+        font-size: 1.125em;
+        line-height: 1.333em;
+        margin: 0;
     }
-        section.secondary .primary-type-list,
-        section.secondary .organizational-type-list {
-            line-height: 1.2em;
-        }
+
+/* HEADINGS */
+h1 a,
+h2 a {
+    text-decoration: none;
+}
+
+/* LISTS */
+.primary-type-sub-list {
+    margin-left: 1.5em;
+    padding: 0;
+}
+    section.secondary .primary-type-title {
+        font-size: 0.875em;
+        line-height: 1.28571em;
+    }
+
+/* DETAILS (<dl>s) */
+.primary-type-details dt {
+    font-weight: bold;
+}
+.primary-type-details dd {
+    margin-bottom: 0.5em;
+}

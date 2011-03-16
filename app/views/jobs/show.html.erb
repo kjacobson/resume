@@ -2,13 +2,13 @@
     <h1 class="primary-type-title job-title">
       <%= @job.title %>
     </h1>
+    <p>
+      <%= @job.short_desc %>
+    </p>
 <% end %>
 
 <% content_for :main do %>
     <section class="primary details job-details">
-        <p>
-          <%= @job.short_desc %>
-        </p>
 
         <h1>Details:</h1>
 
