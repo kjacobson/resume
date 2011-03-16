@@ -3,12 +3,10 @@
 	<% if skills_by_discipline.count >= 1 %>
 		<div class="discipline-with-skills">
 			<h3>
-				<a href="/disciplines/<%= discipline.id %>" class="organizational-type-title" rel="internal" title="See jobs and skills involving this discipline">
-					<%= discipline.title %>
-				</a>
+				<%= render :partial => 'disciplines/link_to_discipline', :locals => {:discipline => discipline} %>
 			</h3>
-			<ol class="skill-list">
-			<% skills_by_discipline.each do |skill| %>
+			<ol class="primary-type-list skill-list">
+				<% skills_by_discipline.each do |skill| %>
 					<li>
 						<%= render :partial => 'skills/link_to_skill', :locals => {:skill => skill} %>
 					</li>

@@ -16,7 +16,7 @@
 	<section class="secondary">
 		<% jobs_count = Job.count %>
 		<h1>Disciplines</h1>
-		<ul>
+		<ul class="organizational-type-list discipline-list">
 			<% @disciplines.each do |discipline| %>
 				<li>
 					<a href="/disciplines/<%= discipline.id %>/" rel="internal" title="See jobs and skills involving this discipline">

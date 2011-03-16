@@ -11,10 +11,14 @@ body {
 	width: 100%;
 }
 	header {
+		display: block;
 		margin: 0 1.25%;
 		overflow: hidden;
 		padding-top: 1.25%;
 	}
+		nav {
+			display: block;
+		}
 		header hgroup {
 			float: left;
 			width: 57.7%;
@@ -32,8 +36,14 @@ body {
 		width: 37.5%; /* 2 full columns. 2 columns subtracting gutters */
 	}
 	footer {
+		display: block;
 		margin: 0 1.25%;
 	}
+
+/* HEADINDS */
+h1, h2 {
+	margin: 0.75em 0 0.25em;
+}
 
 /* LISTS */
 .highlight-list,

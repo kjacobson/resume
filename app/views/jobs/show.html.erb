@@ -10,39 +10,50 @@
 		  <%= @job.short_desc %>
 		</p>
 
-		<h1>Details</h1>
-		<h2>Employer:</h2>
-		<%= @job.employer %>
+		<h1>Details:</h1>
 
-		<% if !@job.status.nil? and @job.status != "" %>
-		  <h2>Status:</h2>
-		  <%= @job.status %>
-		<% end %>
+		<dl class="primary-type-details job-details">
+			<dt>Employer</dt>
+			<dd><%= @job.employer %></dd>
 
-		<% if !@job.project.nil? and @job.project != "" %>
-		  <h2>Project:</h2>
-		  <%= @job.project %>
-		<% end %>
+			<% if !@job.status.nil? and @job.status != "" %>
+			  <dt>Status</dt>
+			  <dd><%= @job.status %></dd>
+			<% end %>
 
-		<% if !@job.url.nil? and @job.url != "" %>
-		  <h2>URL:</h2>
-		  <a href="<%= @job.url %>" rel="external" title="View this project">
-			  <%= @job.url %>
-		  </a>
-		<% end %>
+			<% if !@job.project.nil? and @job.project != "" %>
+			  <dt>Project</dt>
+			  <dd><%= @job.project %></dd>
+			<% end %>
 
-		<h2>Started:</h2>
-		<%= get_month(@job.start_month) %><% if !@job.start_month.nil? and !@job.start_year.nil? %>, <% end %>
-		<%= render :partial => 'years/link_to_year', :locals => {:year => @job.start_year} %>
+			<% if !@job.url.nil? and @job.url != "" %>
+			  <dt>URL</dt>
+			  <dd>
+				  <a href="<%= @job.url %>" rel="external" title="View this project">
+					  <%= @job.url %>
+				  </a>
+			  </dd>
+			<% end %>
 
-		<h2>Ended:</h2>
-		<%= get_month(@job.end_month) %><% if !@job.end_month.nil? and !@job.end_year.nil? %>, <% end %>
-		<%= render :partial => 'years/link_to_year', :locals => {:year => @job.end_year} %>
+			<dt>Started</dt>
+			<dd>
+				<%= get_month(@job.start_month) %><% if !@job.start_month.nil? and !@job.start_year.nil? %>, <% end %>
+				<%= render :partial => 'years/link_to_year', :locals => {:year => @job.start_year} %>
+			</dd>
 
-		<h2>Summary:</h2>
-		<p>
-			<%= @job.long_desc %>
-		</p>
+			<dt>Ended</dt>
+			<dd>
+				<%= get_month(@job.end_month) %><% if !@job.end_month.nil? and !@job.end_year.nil? %>, <% end %>
+				<%= render :partial => 'years/link_to_year', :locals => {:year => @job.end_year} %>
+			</dd>
+
+			<dt>Summary</dt>
+			<dd>
+				<p>
+					<%= @job.long_desc %>
+				</p>
+			</dd>
+		</dl>
 	</section>
 
 	<section class="secondary associations associatedHighlights">

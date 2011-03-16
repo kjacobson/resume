@@ -28,15 +28,13 @@
 <% @jobs.each do |job| %>
   <tr>
     <td>
-		<a href="/jobs/<%= job.id %>" rel="internal" title="See details">
-			<%= job.title %>
-		</a>
+		<%= render :partial => 'jobs/link_to_job', :locals => {:job => job} %>
 	</td>
     <td><%= job.employer %></td>
     <td>
-		<a href="/years/<%= job.start_year %>/" rel="internal" title="Positions held in <%= job.start_year %>"><%= job.start_year %></a>
+		<%= render :partial => 'years/link_to_year', :locals => {:year => job.start_year} %>
 		&ndash;
-		<a href="/years/<%= job.end_year %>/" rel="internal" title="Positions held in <%= job.end_year %>"><%= job.end_year %></a>
+		<%= render :partial => 'years/link_to_year', :locals => {:year => job.end_year} %>
 	</td>
     <td><%= job.short_desc %></td>
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
