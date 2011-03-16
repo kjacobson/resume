@@ -1,50 +1,50 @@
 <% content_for :head do %>
-	<hgroup>
-		<h1>Kyle Jacobson</h1>
-		<h2>Web interaction design and development</h2>
-	</hgroup>
+    <hgroup>
+        <h1>Kyle Jacobson</h1>
+        <h2>Web interaction design and development</h2>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
-	<section class="primary">
-		<h1>Last 5 Positions</h1>
+    <section class="primary">
+        <h1>Last 5 Positions</h1>
 
-		<%= render :partial => "jobs/small_list" %>
-		<a href="/jobs" rel="internal" title="">See all jobs</a>
-	</section>
+        <%= render :partial => "jobs/small_list" %>
+        <a href="/jobs" rel="internal" title="">See all jobs</a>
+    </section>
 
-	<section class="secondary">
-		<% jobs_count = Job.count %>
-		<h1>Disciplines</h1>
-		<ul class="organizational-type-list discipline-list">
-			<% @disciplines.each do |discipline| %>
-				<li>
-					<a href="/disciplines/<%= discipline.id %>/" rel="internal" title="See jobs and skills involving this discipline">
-						<%= discipline.title %></a>: <%= discipline.jobs_using_count %>/<%= jobs_count %>
-				</li>
-			<% end %>
-		</ul>
-	</section>
+    <section class="secondary">
+        <% jobs_count = Job.count %>
+        <h1>Disciplines</h1>
+        <ul class="organizational-type-list discipline-list">
+            <% @disciplines.each do |discipline| %>
+                <li>
+                    <a href="/disciplines/<%= discipline.id %>/" rel="internal" title="See jobs and skills involving this discipline">
+                        <%= discipline.title %></a>: <%= discipline.jobs_using_count %>/<%= jobs_count %>
+                </li>
+            <% end %>
+        </ul>
+    </section>
 
-	<section class="secondary">
-		<h1>
-			<a href="/skills" rel="internal" title="See a list of my skills">Skills</a>
-		</h1>
+    <section class="secondary">
+        <h1>
+            <a href="/skills" rel="internal" title="See a list of my skills">Skills</a>
+        </h1>
 
-		<%= render :partial => "skills/small_list_by_discipline", :locals => { :disciplines => @disciplines, :skills => @skills } %>
-	</section>
+        <%= render :partial => "skills/small_list_by_discipline", :locals => { :disciplines => @disciplines, :skills => @skills } %>
+    </section>
 
-	<section class="secondary">
-		<h1>
-			<a href="/softwares" rel="internal" title="See a list of software applications I've used professionally">Software</a>
-		</h1>
+    <section class="secondary">
+        <h1>
+            <a href="/softwares" rel="internal" title="See a list of software applications I've used professionally">Software</a>
+        </h1>
 
-		<%= render :partial => "softwares/list" %>
-	</section>
+        <%= render :partial => "softwares/list" %>
+    </section>
 
-	<section class="primary">
-		<h1>Education</h1>
-		<h2>Northwestern University</h2>
-		<p>Graduated in 2009 with a BA (honors) in philosophy and a 3.495 GPA</p>
-	</section>
+    <section class="primary">
+        <h1>Education</h1>
+        <h2>Northwestern University</h2>
+        <p>Graduated in 2009 with a BA (honors) in philosophy and a 3.495 GPA</p>
+    </section>
 <% end %>

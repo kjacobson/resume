@@ -17,41 +17,41 @@
  */
 
 body {
-	font-family: Arial, sans-serif;
-	font-size: 10px;
-	line-height: 1.5em;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.5em;
 }
-	header h1 {
-		font-size: 4.8em;
-		font-weight: normal;
-		line-height: 1.5em;
-	}
-	header h2 {
-		font-size: 2.4em;
-		font-weight: normal;
-		line-height: 1.5em;
-	}
-	header nav a {
-		font-size: 2.1em;
-	}
+    header h1 {
+        font-size: 4.8em;
+        font-weight: normal;
+        line-height: 1.5em;
+    }
+    header h2 {
+        font-size: 2.4em;
+        font-weight: normal;
+        line-height: 1.5em;
+    }
+    header nav a {
+        font-size: 2.1em;
+    }
 
-	section h1 {
-		font-size: 2.4em;
-		font-weight: normal;
-		line-height: 1.2em;
-	}
-	section.primary p {
-		font-size: 1.4em;
-		line-height: 1.5em;
-	}
-		section.primary .job-list .job-title {
-			font-size: 1.8em;
-		}
+    section h1 {
+        font-size: 2.4em;
+        font-weight: normal;
+        line-height: 1.2em;
+    }
+    section.primary p {
+        font-size: 1.4em;
+        line-height: 1.5em;
+    }
+        section.primary .job-list .job-title {
+            font-size: 1.8em;
+        }
 
-	section.secondary {
-		font-size: 1.4em;
-	}
-		section.secondary .primary-type-list,
-		section.secondary .organizational-type-list {
-			line-height: 1.2em;
-		}
+    section.secondary {
+        font-size: 1.4em;
+    }
+        section.secondary .primary-type-list,
+        section.secondary .organizational-type-list {
+            line-height: 1.2em;
+        }

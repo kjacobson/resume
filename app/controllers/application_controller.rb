@@ -16,9 +16,9 @@ class ApplicationController < ActionController::Base
   end
 
   def require_known_user
-	  unless current_user
-		 redirect_to :homepage, :notice => 'You must be an admin to access the requested resource.'
-		 return false
-	  end
+      unless current_user
+         redirect_to :homepage, :notice => 'You must be an admin to access the requested resource.'
+         return false
+      end
   end
 end

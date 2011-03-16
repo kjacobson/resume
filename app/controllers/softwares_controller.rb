@@ -4,12 +4,12 @@ class SoftwaresController < ApplicationController
   # GET /softwares
   # GET /softwares.xml
   def index
-	if !params[:job_id].nil?
-		@softwares = Job.find(params[:job_id]).softwares.order("title ASC")
-	else
-    	@softwares = Software.order("title ASC")
-	end
-	
+    if !params[:job_id].nil?
+        @softwares = Job.find(params[:job_id]).softwares.order("title ASC")
+    else
+        @softwares = Software.order("title ASC")
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @softwares }
@@ -20,7 +20,7 @@ class SoftwaresController < ApplicationController
   # GET /softwares/1.xml
   def show
     @software = Software.find_by_slug(params[:id])
-	@jobs = @software.jobs
+    @jobs = @software.jobs
 
     respond_to do |format|
       format.html # show.html.erb

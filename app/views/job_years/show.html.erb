@@ -1,19 +1,19 @@
 <% content_for :head do %>
-	<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 <% end %>
 
 <% content_for :main do %>
-	<p>
-	  <b>Job:</b>
-	  <%= @job_year.job_id %>
-	</p>
+    <p>
+      <b>Job:</b>
+      <%= @job_year.job_id %>
+    </p>
 
-	<p>
-	  <b>Year:</b>
-	  <%= @job_year.year_id %>
-	</p>
+    <p>
+      <b>Year:</b>
+      <%= @job_year.year_id %>
+    </p>
 
 
-	<%= link_to 'Edit', edit_job_year_path(@job_year) %> |
-	<%= link_to 'Back', job_years_path %>
+    <%= link_to 'Edit', edit_job_year_path(@job_year) %> |
+    <%= link_to 'Back', job_years_path %>
 <% end %>

@@ -1,14 +1,14 @@
 <% content_for :head do %>
-	<h1>
-  		<%= @discipline.title %>
-	</h1>
+    <h1>
+          <%= @discipline.title %>
+    </h1>
 <% end %>
 
 <% content_for :main do %>
-	<h2>Skills</h2>
-	<%= render :partial => 'skills/small_list', :locals => { :skills => @skills } %>
+    <h2>Skills</h2>
+    <%= render :partial => 'skills/small_list', :locals => { :skills => @skills } %>
 
 
-	<%= link_to 'Edit', edit_discipline_path(@discipline) %> |
-	<%= link_to 'Back', disciplines_path %>
+    <%= link_to 'Edit', edit_discipline_path(@discipline) %> |
+    <%= link_to 'Back', disciplines_path %>
 <% end %>

@@ -1,9 +1,9 @@
 class AddDisciplineIdToSkills < ActiveRecord::Migration
   def self.up
-	  add_column :skills, :discipline_id, :integer
+      add_column :skills, :discipline_id, :integer
   end
 
   def self.down
-	  remove_column :skills, :discipline_id
+      remove_column :skills, :discipline_id
   end
 end

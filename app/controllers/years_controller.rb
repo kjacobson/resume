@@ -4,16 +4,16 @@ class YearsController < ApplicationController
   # GET /years
   # GET /years.xml
   def index
-	if !params[:job_id].nil?
-		@job = Job.find_by_id(params[:job_id])
-		@years = @job.years.order("value DESC")
-	elsif !params[:skill_id].nil?
-		@skill = Skill.find_by_id(params[:skill_id])
-		@years = @skill.years
-		@years.sort! { |a,b| b.value <=> a.value }
-	else
-    	@years = Year.order("value DESC")
-	end
+    if !params[:job_id].nil?
+        @job = Job.find_by_id(params[:job_id])
+        @years = @job.years.order("value DESC")
+    elsif !params[:skill_id].nil?
+        @skill = Skill.find_by_id(params[:skill_id])
+        @years = @skill.years
+        @years.sort! { |a,b| b.value <=> a.value }
+    else
+        @years = Year.order("value DESC")
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,10 +25,10 @@ class YearsController < ApplicationController
   # GET /years/1.xml
   def show
     @year = Year.find_by_value(params[:id])
-	@jobs = @year.jobs.order("end_year DESC")
-	@disciplines = Discipline.all
-	@skills = @year.skills
-	@skills.sort! { |a,b| a.title <=> b.title }
+    @jobs = @year.jobs.order("end_year DESC")
+    @disciplines = Discipline.all
+    @skills = @year.skills
+    @skills.sort! { |a,b| a.title <=> b.title }
 
     respond_to do |format|
       format.html # show.html.erb

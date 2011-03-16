@@ -1,7 +1,7 @@
 <ol class="year-list">
-	<% @years.each do |year| %>
-		<li>
-			<%= render :partial => 'years/link_to_year', :locals => {:year => year.value} %>
-		</li>
-	<% end%>
+    <% @years.each do |year| %>
+        <li>
+            <%= render :partial => 'years/link_to_year', :locals => {:year => year.value} %>
+        </li>
+    <% end%>
 </ol>

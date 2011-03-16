@@ -1,23 +1,23 @@
 <% content_for :head do %>
-	<h1>
-  		<%= @year.value %>
-	</h1>
+    <h1>
+          <%= @year.value %>
+    </h1>
 <% end %>
 
 <% content_for :main do %>
-	<section class="primary">
-		<h2>Positions held in <%= @year.value %></h2>
-		<%= render :partial => 'jobs/small_list' %>
+    <section class="primary">
+        <h2>Positions held in <%= @year.value %></h2>
+        <%= render :partial => 'jobs/small_list' %>
 
-		<h2>Skills</h2>
-		<% if !@disciplines.nil? and @disciplines.count >= 1 %>
-			<%= render :partial => 'skills/small_list_by_discipline', :locals => {:disciplines => @disciplines, :skills => @skills} %>
-		<% else %>
-			<%= render :partial => 'skills/small_list', :locals => {:skills => @skills} %>
-		<% end %>
+        <h2>Skills</h2>
+        <% if !@disciplines.nil? and @disciplines.count >= 1 %>
+            <%= render :partial => 'skills/small_list_by_discipline', :locals => {:disciplines => @disciplines, :skills => @skills} %>
+        <% else %>
+            <%= render :partial => 'skills/small_list', :locals => {:skills => @skills} %>
+        <% end %>
 
 
-		<%= link_to 'Edit', edit_year_path(@year) %> |
-		<%= link_to 'Back', years_path %>
-	</section>
+        <%= link_to 'Edit', edit_year_path(@year) %> |
+        <%= link_to 'Back', years_path %>
+    </section>
 <% end %>

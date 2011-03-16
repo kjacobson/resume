@@ -1,16 +1,16 @@
 <% content_for :head do %>
-	<h1>
-		Listing jobs
-		<% if !@skill.nil? %>
-			<%= ' involving ' + @skill.title %>
-		<% elsif !@software.nil? %>
-			<%= 'involving ' + @software.title %>
-		<% end %>
-	</h1>
+    <h1>
+        Listing jobs
+        <% if !@skill.nil? %>
+            <%= ' involving ' + @skill.title %>
+        <% elsif !@software.nil? %>
+            <%= 'involving ' + @software.title %>
+        <% end %>
+    </h1>
 <% end %>
 
 <% content_for :main do %>
-	<section class="primary">
-		<%= render :partial => 'jobs/full_list' %>
-	</section>
+    <section class="primary">
+        <%= render :partial => 'jobs/full_list' %>
+    </section>
 <% end %>

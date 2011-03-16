@@ -4,20 +4,20 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.xml
   def index
-	@order_by = !params[:order_by].nil? ? params[:order_by] : "end_year"
-	@direction = !params[:direction].nil? ? params[:direction] : "DESC"
-	if !params[:skill_id].nil?
-		@skill = Skill.find_by_id(params[:skill_id]).order(@order_by + " " + @direction)
-		@jobs = @skill.jobs
-	elsif !params[:software_id].nil?
-		@software = Software.find_by_id(params[:software_id]).order(@order_by + " " + @direction)
-		@jobs = @software.jobs
-	elsif !params[:year_id].nil?
-		@year = Year.find_by_value(params[:year_id]).order(@order_by + " " + @direction)
-		@jobs = @year.jobs
-	else
-		@jobs = Job.find(:all, :order => @order_by + " " + @direction)
-	end
+    @order_by = !params[:order_by].nil? ? params[:order_by] : "end_year"
+    @direction = !params[:direction].nil? ? params[:direction] : "DESC"
+    if !params[:skill_id].nil?
+        @skill = Skill.find_by_id(params[:skill_id]).order(@order_by + " " + @direction)
+        @jobs = @skill.jobs
+    elsif !params[:software_id].nil?
+        @software = Software.find_by_id(params[:software_id]).order(@order_by + " " + @direction)
+        @jobs = @software.jobs
+    elsif !params[:year_id].nil?
+        @year = Year.find_by_value(params[:year_id]).order(@order_by + " " + @direction)
+        @jobs = @year.jobs
+    else
+        @jobs = Job.find(:all, :order => @order_by + " " + @direction)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,11 +29,11 @@ class JobsController < ApplicationController
   # GET /jobs/1.xml
   def show
     @job = Job.find(params[:id])
-	@skills = @job.skills.order("rank DESC")
-	@softwares = @job.softwares.order("title ASC")
-	@years = @job.years.order("value DESC")
-	@highlights = @job.highlights.order("skill_id")
-	@disciplines = @job.disciplines
+    @skills = @job.skills.order("rank DESC")
+    @softwares = @job.softwares.order("title ASC")
+    @years = @job.years.order("value DESC")
+    @highlights = @job.highlights.order("skill_id")
+    @disciplines = @job.disciplines
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,12 +44,12 @@ class JobsController < ApplicationController
   # GET /jobs/new
   # GET /jobs/new.xml
   def new
-	@job = Job.new
+    @job = Job.new
 
-	respond_to do |format|
-	  format.html # new.html.erb
-	  format.xml  { render :xml => @job }
-	end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @job }
+    end
   end
 
   # GET /jobs/1/edit

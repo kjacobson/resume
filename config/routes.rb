@@ -11,28 +11,28 @@ Resume::Application.routes.draw do
   resources :job_skills
   
   resources :disciplines do
-	  resources :skills
+      resources :skills
   end
 
   resources :years do
-	  resources :jobs
-	  resources :skills
+      resources :jobs
+      resources :skills
   end
 
   resources :softwares do
-	  resources :jobs
+      resources :jobs
   end
 
   resources :skills do
-	  resources :jobs
-	  resources :years
+      resources :jobs
+      resources :years
   end
 
   resources :jobs do
-	  resources :years
-	  resources :softwares
-	  resources :skills
-	  resources :disciplines
+      resources :years
+      resources :softwares
+      resources :skills
+      resources :disciplines
   end
 
   resources :home

@@ -1,6 +1,6 @@
 <table>
   <tr>
-	<th>ID</th>
+    <th>ID</th>
     <th>Title</th>
     <th></th>
     <th></th>
@@ -9,10 +9,10 @@
 
 <% @skills.each do |skill| %>
   <tr>
-  	<td><%= skill.id %></td>
+      <td><%= skill.id %></td>
     <td>
-		<%= render :partial => 'link_to_skill', :locals => {:skill => skill} %>
-	</td>
+        <%= render :partial => 'link_to_skill', :locals => {:skill => skill} %>
+    </td>
     <td><%= link_to 'Show', skill %></td>
     <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
     <td><%= link_to 'Destroy', skill, :confirm => 'Are you sure?', :method => :delete %></td>

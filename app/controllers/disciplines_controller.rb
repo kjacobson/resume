@@ -4,11 +4,11 @@ class DisciplinesController < ApplicationController
   # GET /disciplines
   # GET /disciplines.xml
   def index
-	if !params[:job_id].nil?
-		@disciplines = Job.find(params[:job_id]).disciplines
-	else
-    	@disciplines = Discipline.all
-	end
+    if !params[:job_id].nil?
+        @disciplines = Job.find(params[:job_id]).disciplines
+    else
+        @disciplines = Discipline.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +20,7 @@ class DisciplinesController < ApplicationController
   # GET /disciplines/1.xml
   def show
     @discipline = Discipline.find(params[:id])
-	@skills = @discipline.skills
+    @skills = @discipline.skills
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,12 +31,12 @@ class DisciplinesController < ApplicationController
   # GET /disciplines/new
   # GET /disciplines/new.xml
   def new
-	@discipline = Discipline.new
+    @discipline = Discipline.new
 
-	respond_to do |format|
-	  format.html # new.html.erb
-	  format.xml  { render :xml => @discipline }
-	end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @discipline }
+    end
   end
 
   # GET /disciplines/1/edit
