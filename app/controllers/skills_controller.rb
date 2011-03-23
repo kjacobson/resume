@@ -31,6 +31,7 @@ class SkillsController < ApplicationController
     @skill = Skill.find_by_slug(params[:id])
     @jobs = @skill.jobs.order("end_year DESC")
     @years = @skill.years
+    @highlights = @skill.highlights
 
     respond_to do |format|
       format.html # show.html.erb

@@ -38,6 +38,15 @@ body {
         margin: 0 1.25%;
         width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
     }
+        section.primary .primary-type-details dt {
+            clear: left;
+            float: left;
+            width: 16.6667%;
+        }
+        section.primary .primary-type-details dd {
+            float: left;
+            width: 83.3333%;
+        }
     section.secondary {
         clear: right;
         float: right;
@@ -46,7 +55,7 @@ body {
     }
     footer {
         display: block;
-        margin: 0 1.25%;
+        margin: 5% 1.25% 0;
     }
 
 /* LISTS */

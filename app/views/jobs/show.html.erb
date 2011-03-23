@@ -35,14 +35,11 @@
               </dd>
             <% end %>
 
-            <dt>Started</dt>
+            <dt>Dates</dt>
             <dd>
                 <%= get_month(@job.start_month) %><% if !@job.start_month.nil? and !@job.start_year.nil? %>, <% end %>
                 <%= render :partial => 'years/link_to_year', :locals => {:year => @job.start_year} %>
-            </dd>
-
-            <dt>Ended</dt>
-            <dd>
+                &ndash;
                 <%= get_month(@job.end_month) %><% if !@job.end_month.nil? and !@job.end_year.nil? %>, <% end %>
                 <%= render :partial => 'years/link_to_year', :locals => {:year => @job.end_year} %>
             </dd>
