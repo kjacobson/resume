@@ -32,30 +32,34 @@ body {
             float: left;
             width: 57.7%;
         }
-    section.primary {
-        clear: left;
-        float: left;
-        margin: 0 1.25%;
-        width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
+    #main {
+        overflow: hidden;
     }
-        section.primary .primary-type-details dt {
+        section.primary {
             clear: left;
             float: left;
-            width: 16.6667%;
+            margin: 0 1.25%;
+            width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
         }
-        section.primary .primary-type-details dd {
-            float: left;
-            width: 83.3333%;
+            section.primary .primary-type-details dt {
+                clear: left;
+                float: left;
+                width: 16.6667%;
+            }
+            section.primary .primary-type-details dd {
+                float: left;
+                width: 83.3333%;
+            }
+        section.secondary {
+            clear: right;
+            float: right;
+            margin: 0 1.25%;
+            width: 37.5%; /* 2 full columns. 2 columns subtracting gutters */
         }
-    section.secondary {
-        clear: right;
-        float: right;
-        margin: 0 1.25%;
-        width: 37.5%; /* 2 full columns. 2 columns subtracting gutters */
-    }
     footer {
+        clear: both;
         display: block;
-        margin: 5% 1.25% 0;
+        margin: 3em 1.25% 0;
     }
 
 /* LISTS */

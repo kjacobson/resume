@@ -66,6 +66,10 @@ body {
         margin: 0;
     }
 
+footer p {
+    font-size: 0.875em;
+}
+
 /* HEADINGS */
 h1 a,
 h2 a {
