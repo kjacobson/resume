@@ -1,44 +1,42 @@
 <table>
-  <tr>
-    <th>
-        <a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
-            Title
-        </a>
-    </th>
-    <th>
-        <a href="<%= sorting_href('employer',@order_by, @direction) %>" rel="canonical" title="Order by employer">
-            Employer
-        </a>
-    </th>
-    <th>
-        <a href="<%= sorting_href('start_year',@order_by, @direction) %>" rel="canonical" title="Order by start year">
-            Years
-        </a>
-    </th>
-    <th>
-        <a href="<%= sorting_href('short_desc',@order_by, @direction) %>" rel="canonical" title="Order by description">
-            Brief Description
-        </a>
-    </th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tr>
+        <th class="d30">
+            <a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
+                Title
+            </a>
+        </th>
+        <th class="d20">
+            <a href="<%= sorting_href('employer',@order_by, @direction) %>" rel="canonical" title="Order by employer">
+                Employer
+            </a>
+        </th>
+        <th class="d20">
+            <a href="<%= sorting_href('start_year',@order_by, @direction) %>" rel="canonical" title="Order by start year">
+                Years
+            </a>
+        </th>
+        <th class="d30">
+            <a href="<%= sorting_href('short_desc',@order_by, @direction) %>" rel="canonical" title="Order by description">
+                Brief Description
+            </a>
+        </th>
+        <th></th>
+    </tr>
 
-<% @jobs.each do |job| %>
-  <tr>
-    <td>
-        <%= render :partial => 'jobs/link_to_job', :locals => {:job => job} %>
-    </td>
-    <td><%= job.employer %></td>
-    <td>
-        <%= render :partial => 'years/link_to_year', :locals => {:year => job.start_year} %>
-        &ndash;
-        <%= render :partial => 'years/link_to_year', :locals => {:year => job.end_year} %>
-    </td>
-    <td><%= job.short_desc %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+    <% @jobs.each do |job| %>
+        <tr>
+            <td>
+                <%= render :partial => 'jobs/link_to_job', :locals => {:job => job} %>
+            </td>
+            <td><%= job.employer %></td>
+            <td>
+                <%= render :partial => 'years/link_to_year', :locals => {:year => job.start_year} %>
+                &ndash;
+                <%= render :partial => 'years/link_to_year', :locals => {:year => job.end_year} %>
+            </td>
+            <td>
+                <%= job.short_desc %>
+            </td>
+        </tr>
+    <% end %>
 </table>

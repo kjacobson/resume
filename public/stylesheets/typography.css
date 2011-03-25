@@ -76,6 +76,14 @@ h2 a {
     text-decoration: none;
 }
 
+/* TABLES */
+section.primary.extended th {
+    font-size: 1.3125em;    
+}
+    th a {
+        text-decoration: none;    
+    }
+
 /* LISTS */
 .primary-type-sub-list {
     margin-left: 1.5em;
@@ -84,6 +92,12 @@ h2 a {
     section.secondary .primary-type-title {
         font-size: 0.875em;
         line-height: 1.28571em;
+    }
+
+    section.secondary .year-title {
+        font-size: 1.125em;
+        line-height: 1.333em;
+        margin-right: 0.6667em;
     }
 
 /* DETAILS (<dl>s) */

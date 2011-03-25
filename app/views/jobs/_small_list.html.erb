@@ -1,7 +1,7 @@
 <ol class="job-list">
     <% @jobs.each do |job| %>
         <li>
-            <a href="/jobs/<%= job.id %>" class="job-title" rel="internal" title="See details"><%= job.title %></a>,
+            <%= render :partial => 'jobs/link_to_job', :locals => { :job => job } %>,
             <span class="job-status"><%= job.status %></span>
             <p>
                 <%= job.employer %>,

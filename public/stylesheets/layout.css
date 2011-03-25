@@ -17,6 +17,8 @@
 body {
     height: auto;
     min-height: 100%;
+    overflow: auto;
+    position: relative;
     width: 100%;
 }
     header {
@@ -28,6 +30,12 @@ body {
         nav {
             display: block;
         }
+            /*.breadcrumbs {
+                list-style-type: disc;
+            }*/
+                .breadcrumbs li {
+                    display: inline;
+                }
         header hgroup {
             float: left;
             width: 57.7%;
@@ -39,7 +47,16 @@ body {
             clear: left;
             float: left;
             margin: 0 1.25%;
+            overflow: auto;
             width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
+        }
+        section.primary.extended {
+            clear: both;
+            float: none;
+            /* use margin on internal elements. since this is 100%, let's keep division easy */
+            margin: 0;
+            overflow: auto;
+            width: 100%;
         }
             section.primary .primary-type-details dt {
                 clear: left;
@@ -54,13 +71,63 @@ body {
             clear: right;
             float: right;
             margin: 0 1.25%;
+            overflow: auto;
             width: 37.5%; /* 2 full columns. 2 columns subtracting gutters */
         }
+        section.secondary.extended {
+            clear: both;
+            float: none;
+            /* use margin on internal elements. since this is 100%, let's keep division easy */
+            margin: 0;
+            overflow: auto;
+            width: 100%;
+        }
+            section.extended h1 {
+                padding: 0 1.25%;
+            }
+            section.extended h2 {
+                padding: 0 1.25%;
+            }
+            section.extended p {
+                padding: 0 1.25%;
+                width: 37.5%;
+            }
+            section.extended .sub-list-organizational-module {
+                float: left;
+                margin: 0 1.25%;
+                width: 17.5%;
+            }
     footer {
         clear: both;
         display: block;
         margin: 3em 1.25% 0;
     }
+
+/* TABLES */
+th {
+    text-align: left;
+}
+th, td {
+    padding-right: 1.25%;
+    padding-left: 1.25%;
+}
+th.d10,
+td.d10 {
+    width: 7.5%;
+}
+th.d20,
+td.d20 {
+    width: 17.5%;
+}
+th.d30,
+td.d30 {
+    width: 27.5%;
+}
+th.d40,
+td.d40 {
+    width: 37.5%;
+}
+
 
 /* LISTS */
 .highlight-list,
@@ -69,4 +136,10 @@ body {
 .software-list,
 .year-list {
     list-style-type: none;
+}
+.year-list li {
+    display: inline;
+}
+section.secondary .year-list {
+    width: 50%;
 }

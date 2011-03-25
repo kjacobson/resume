@@ -53,14 +53,19 @@
         </dl>
     </section>
 
-    <section class="secondary associations associatedHighlights">
-        <% if @highlights.count >= 1 %>
-            <h1>Highlights:</h1>
-            <%= render :partial => 'highlights/list' %>
-        <% end %>
-    </section>
+    <% if @highlights.count >= 1 %>
+        <section class="secondary associations associatedHighlights">
+                <h1>Highlights:</h1>
+                <%= render :partial => 'highlights/list' %>
+        </section>
+    <% elsif @softwares.count >= 1 %>
+        <section class="secondary associations associatedSoftware">
+                <h1>Software used:</h1>
+                <%= render :partial => 'softwares/list' %>
+        </section>
+    <% end %>
 
-    <section class="secondary associations associatedSkills">
+    <section class="secondary extended associations associatedSkills">
         <% if @skills.count >= 1 %>
             <h1>Skills used:</h1>
             <% if !@disciplines.nil? and @disciplines.count >= 1 %>
@@ -71,10 +76,10 @@
         <% end %>
     </section>
 
-    <section class="secondary associations associatedSoftware">
-        <% if @softwares.count >= 1 %>
-            <h1>Software used:</h1>
-            <%= render :partial => 'softwares/list' %>
-        <% end %>
-    </section>
+    <% if @highlights.count >= 1 && @softwares.count >= 1 %>
+        <section class="secondary associations associatedSoftware">
+                <h1>Software used:</h1>
+                <%= render :partial => 'softwares/list' %>
+        </section>
+    <% end %>
 <% end %>
