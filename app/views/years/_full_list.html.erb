@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <% if !current_user.nil? %>
+            <th class="d10 numericData">
+                <a href="<%= sorting_href('id',@order_by, @direction) %>" rel="canonical" title="Order by ID">
+                    ID
+                </a>
+            </th>
+        <% end %>
+        <th class="d40">
+            <a href="<%= sorting_href('value',@order_by, @direction) %>" rel="canonical" title="Order by value">
+                Value
+            </a>
+        </th>
+    </tr>
+
+    <% @years.each do |year| %>
+        <tr>
+            <% if !current_user.nil? %>
+                <td class="numericData"><%= year.id %></td>
+            <% end %>
+            <td>
+                <%= render :partial => 'link_to_year', :locals => { :year => year.value } %>
+            </td>
+        </tr>
+    <% end %>
+</table>

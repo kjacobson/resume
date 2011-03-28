@@ -1,0 +1,29 @@
+<table>
+    <tr>
+        <% if !current_user.nil? %>
+            <th class="d10 numericData">
+                <a href="<%= sorting_href('id',@order_by, @direction) %>" rel="canonical" title="Order by ID">
+                    ID
+                </a>
+            </th>
+        <% end %>
+        <th class="d40">
+            <a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
+                Title
+            </a>
+        </th>
+    </tr>
+
+    <% @softwares.each do |software| %>
+        <tr>
+            <% if !current_user.nil? %>
+                <td class="numericData"><%= software.id %></td>
+            <% end %>
+            <td>
+                <a href="/softwares/<%= software.id %>" rel="internal" title="See jobs this application was used in">
+                    <%= software.title %>
+                </a>
+            </td>
+        </tr>
+    <% end %>
+</table>
