@@ -12,9 +12,5 @@
             <h1>Skills</h1>
         </hgroup>
         <%= render :partial => 'skills/small_list', :locals => { :skills => @skills } %>
-
-
-        <%= link_to 'Edit', edit_discipline_path(@discipline) %> |
-        <%= link_to 'Back', disciplines_path %>
     </section>
 <% end %>

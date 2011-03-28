@@ -40,18 +40,21 @@ body {
                 }
             #pseudoBranding {
                 float: right;
+                margin-right: 1.25%;
             }
     #main {
         overflow: hidden;
     }
         section.primary {
+            border-right: 1px solid #E9E7E0;
             clear: left;
             float: left;
             margin: 0 1.25%;
             overflow: auto;
-            width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
+            width: 57.4%; /* 4 full columns. 2 columns subtracting gutters */
         }
         section.primary.extended {
+            border: 0;
             clear: both;
             float: none;
             /* use margin on internal elements. since this is 100%, let's keep division easy */
