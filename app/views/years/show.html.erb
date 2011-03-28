@@ -1,19 +1,18 @@
 <% content_for :head do %>
-    <h1>
-          <%= @year.value %>
-    </h1>
+    <hgroup>
+        <h1>
+              <%= @year.value %>
+        </h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
     <section class="primary">
         <h1>Positions held in <%= @year.value %></h1>
         <%= render :partial => 'jobs/small_list' %>
-
-        <%= link_to 'Edit', edit_year_path(@year) %> |
-        <%= link_to 'Back', years_path %>
     </section>
 
-    <section class="secondary">
+    <section class="secondary extended">
         <h1>Skills</h1>
         <% if !@disciplines.nil? and @disciplines.count >= 1 %>
             <%= render :partial => 'skills/small_list_by_discipline', :locals => {:disciplines => @disciplines, :skills => @skills} %>

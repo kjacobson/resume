@@ -1,46 +1,62 @@
 <%
-   controller = params[:controller]
-   category = controller.capitalize
-   id = params[:id]
-   action = params[:action]
-   if controller == "softwares"
+    controller = params[:controller]
+    category = controller.capitalize
+    id = params[:id]
+    action = params[:action]
+    if controller == "home"
+        category = ""
+        item = ""
+        identifier = ""
+    elsif controller == "softwares"
         category = "Software Programs"
         if !id.nil?
             item = Software.find_by_slug(id)
             identifier = item.title
         end
-   elsif controller == "skills"
+    elsif controller == "skills"
         if !id.nil?
             item = Skill.find_by_slug(id)
             identifier = item.title
         end
-   elsif controller == "years"
+    elsif controller == "years"
         if !id.nil?
             item = Year.find_by_value(id)
             identifier = id
         end
-   elsif controller == "jobs"
+    elsif controller == "jobs"
         if !id.nil?
             item = Job.find(id)
             identifier = item.employer
         end
-   end
+    end
 %>
 <ul class="breadcrumbs">
-    <% if controller != "home" %><li><a href="/" rel="internal" title="">Home</a></li><% end %>
     <li>
-        <% if action  == "index" %>
-            <a><%= category %></a>
+        <% if controller != "home" %>
+            <a href="/" rel="internal" title="">Home</a>
         <% else %>
-            <a href="/<%= controller %>/" rel="internal" title="See all <%= category %>"><%= category %></a>
+            <a>Home</a>
         <% end %>
     </li>
-    <li>
-        <% if action == "show" and !id.nil? %>
-            <a><%= identifier %></a>
-        <% else %>
-            <a href="/<%= controller %>/<%= params[:id] %>" rel="internal" title=""><%= identifier %></a>
-        <% end %>
-    </li>
+    <% if category != "" %>
+        <li>
+            <span class="breadcrumb-separator">&gt;</span>
+            <% if action  == "index" %>
+                <a><%= category %></a>
+            <% else %>
+                <a href="/<%= controller %>/" rel="internal" title="See all <%= category %>"><%= category %></a>
+            <% end %>
+        </li>
+    <% end %>
+    <% if action != "" && action != "index" %>
+        <li>
+            <span class="breadcrumb-separator">&gt;</span>
+            <% if action == "show" and !id.nil? %>
+                <a><%= identifier %></a>
+            <% else %>
+                <a href="/<%= controller %>/<%= params[:id] %>" rel="internal" title=""><%= identifier %></a>
+            <% end %>
+        </li>
+    <% end %>
 </ul>
 <% # TODO: this doesn't handle nested resources! %>

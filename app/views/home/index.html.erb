@@ -7,10 +7,10 @@
 
 <% content_for :main do %>
     <section class="primary">
-        <h1>Last 5 Positions</h1>
+        <h1>Last 3 Positions/Projects</h1>
 
         <%= render :partial => "jobs/small_list" %>
-        <a href="/jobs" rel="internal" title="">See all jobs</a>
+        [&hellip;] <a href="/jobs" rel="internal" title="">See all jobs</a>
     </section>
 
     <section class="secondary">
@@ -31,7 +31,7 @@
             <a href="/softwares" rel="internal" title="See a list of software applications I've used professionally">Software</a>
         </h1>
 
-        <%= render :partial => "softwares/list" %>
+        <%= render :partial => "softwares/list", :locals => { :abbreviated => true} %>
     </section>
 
     <section class="secondary extended">

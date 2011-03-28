@@ -1,33 +1,11 @@
 <% content_for :head do %>
-    <h1>Listing softwares</h1>
+    <hgroup>
+        <h1>Listing softwares</h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    <% @softwares.each do |software| %>
-      <tr>
-        <td><%= software.id %></td>
-        <td>
-            <a href="/softwares/<%= software.id %>" rel="internal" title="See jobs this application was used in">
-                <%= software.title %>
-            </a>
-        </td>
-        <td><%= link_to 'Show', software %></td>
-        <td><%= link_to 'Edit', edit_software_path(software) %></td>
-        <td><%= link_to 'Destroy', software, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
-    <% end %>
-    </table>
-
-    <br />
-
-    <%= link_to 'New Software', new_software_path %>
+    <section class="primary extended">
+        <%= render :partial => 'softwares/full_list' %>
+    </section>
 <% end %>

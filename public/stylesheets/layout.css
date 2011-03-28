@@ -23,23 +23,24 @@ body {
 }
     header {
         display: block;
-        margin: 0 1.25%;
-        overflow: hidden;
-        padding-top: 1.25%;
+        overflow: hidden;\
     }
-        nav {
+        header nav,
+        header hgroup,
+        header p {
+            clear: both;
             display: block;
+            padding: 0 1.25%;
         }
-            /*.breadcrumbs {
-                list-style-type: disc;
-            }*/
+            .breadcrumbs {
+                padding: 0.75em 0.5em;
+            }
                 .breadcrumbs li {
                     display: inline;
                 }
-        header hgroup {
-            float: left;
-            width: 57.7%;
-        }
+            #pseudoBranding {
+                float: right;
+            }
     #main {
         overflow: hidden;
     }
@@ -65,7 +66,8 @@ body {
             }
             section.primary .primary-type-details dd {
                 float: left;
-                width: 83.3333%;
+                /* gives an extra 24px margin (in the hypothetical 960px layout) */
+                width: 78.9855%;
             }
         section.secondary {
             clear: right;
@@ -78,7 +80,7 @@ body {
             clear: both;
             float: none;
             /* use margin on internal elements. since this is 100%, let's keep division easy */
-            margin: 0;
+            margin: 0 0 1.125em;
             overflow: auto;
             width: 100%;
         }
@@ -104,29 +106,34 @@ body {
     }
 
 /* TABLES */
-th {
-    text-align: left;
+section.primary.extended table {
+    width: 100%;
 }
-th, td {
-    padding-right: 1.25%;
-    padding-left: 1.25%;
-}
-th.d10,
-td.d10 {
-    width: 7.5%;
-}
-th.d20,
-td.d20 {
-    width: 17.5%;
-}
-th.d30,
-td.d30 {
-    width: 27.5%;
-}
-th.d40,
-td.d40 {
-    width: 37.5%;
-}
+    th, td {
+        padding-right: 1.25%;
+        padding-left: 1.25%;
+        text-align: left;
+    }
+    th.numericData,
+    td.numericData {
+        text-align: right;
+    }
+    th.d10,
+    td.d10 {
+        width: 7.5%;
+    }
+    th.d20,
+    td.d20 {
+        width: 17.5%;
+    }
+    th.d30,
+    td.d30 {
+        width: 27.5%;
+    }
+    th.d40,
+    td.d40 {
+        width: 37.5%;
+    }
 
 
 /* LISTS */

@@ -1,21 +1,27 @@
 <table>
-  <tr>
-    <th>ID</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tr>
+        <% if !current_user.nil? %>
+            <th class="d10 numericData">
+                <a href="<%= sorting_href('id',@order_by, @direction) %>" rel="canonical" title="Order by ID">
+                    ID
+                </a>
+            </th>
+        <% end %>
+        <th class="d40">
+            <a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
+                Title
+            </a>
+        </th>
+    </tr>
 
-<% @skills.each do |skill| %>
-  <tr>
-      <td><%= skill.id %></td>
-    <td>
-        <%= render :partial => 'link_to_skill', :locals => {:skill => skill} %>
-    </td>
-    <td><%= link_to 'Show', skill %></td>
-    <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-    <td><%= link_to 'Destroy', skill, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+    <% @skills.each do |skill| %>
+        <tr>
+            <% if !current_user.nil? %>
+                <td class="numericData"><%= skill.id %></td>
+            <% end %>
+            <td>
+                <%= render :partial => 'link_to_skill', :locals => {:skill => skill} %>
+            </td>
+        </tr>
+    <% end %>
 </table>

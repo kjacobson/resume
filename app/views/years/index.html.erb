@@ -1,33 +1,11 @@
 <% content_for :head do %>
-    <h1>Listing years</h1>
+    <hgroup>
+        <h1>Listing years</h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Value</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-
-    <% @years.each do |year| %>
-      <tr>
-        <td><%= year.id %></td>
-        <td>
-            <a href="/years/<%= year.value %>/" rel="internal" title="View positions held in <%= year.value %>">
-                <%= year.value %>
-            </a>
-        </td>
-        <td><%= link_to 'Show', year %></td>
-        <td><%= link_to 'Edit', edit_year_path(year) %></td>
-        <td><%= link_to 'Destroy', year, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
-    <% end %>
-    </table>
-
-    <br />
-
-    <%= link_to 'New Year', new_year_path %>
+    <section class="primary extended">
+        <%= render :partial => 'years/full_list' %>
+    </section>
 <% end %>

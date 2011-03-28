@@ -4,10 +4,12 @@ class SoftwaresController < ApplicationController
   # GET /softwares
   # GET /softwares.xml
   def index
+    @order_by = !params[:order_by].nil? ? params[:order_by] : "title"
+    @direction = !params[:direction].nil? ? params[:direction] : "ASC"
     if !params[:job_id].nil?
-        @softwares = Job.find(params[:job_id]).softwares.order("title ASC")
+        @softwares = Job.find(params[:job_id]).softwares.order(@order_by + " " + @direction)
     else
-        @softwares = Software.order("title ASC")
+        @softwares = Software.find(:all, :order => @order_by + " " + @direction)
     end
 
     respond_to do |format|
@@ -51,7 +53,7 @@ class SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.save
-        format.html { redirect_to(@software, :notice => 'Software was successfully created.') }
+        format.html { redirect_to("/softwares/#{@software.slug}", :notice => 'Software was successfully created.') }
         format.xml  { render :xml => @software, :status => :created, :location => @software }
       else
         format.html { render :action => "new" }

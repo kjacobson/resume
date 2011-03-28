@@ -4,19 +4,21 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.xml
   def index
+    @order_by = !params[:order_by].nil? ? params[:order_by] : "title"
+    @direction = !params[:direction].nil? ? params[:direction] : "ASC"
     if !params[:job_id].nil?
         @job = Job.find(params[:job_id])
         @disciplines = @job.disciplines
-        @skills = @job.skills.order("title ASC")
+        @skills = @job.skills.order(@order_by + " " + @direction)
     elsif !params[:year_id].nil?
         @disciplines = Discipline.all
         @skills = Year.find_by_value(params[:year_id]).skills
         @skills.sort! { |a,b| a.title <=> b.title }
     elsif !params[:discipline_id].nil?
-        @skills = Discipline.find(params[:discipline_id]).skills.order("title ASC")
+        @skills = Discipline.find(params[:discipline_id]).skills.order(@order_by + " " + @direction)
     else
         @disciplines = Discipline.all
-        @skills = Skill.order("rank DESC")
+        @skills = Skill.find(:all, :order => @order_by + " " + @direction)
     end
 
     respond_to do |format|

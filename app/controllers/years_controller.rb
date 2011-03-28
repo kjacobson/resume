@@ -4,15 +4,17 @@ class YearsController < ApplicationController
   # GET /years
   # GET /years.xml
   def index
+    @order_by = !params[:order_by].nil? ? params[:order_by] : "value"
+    @direction = !params[:direction].nil? ? params[:direction] : "DESC"
     if !params[:job_id].nil?
         @job = Job.find_by_id(params[:job_id])
-        @years = @job.years.order("value DESC")
+        @years = @job.years.order(@order_by + " " + @direction)
     elsif !params[:skill_id].nil?
         @skill = Skill.find_by_id(params[:skill_id])
         @years = @skill.years
         @years.sort! { |a,b| b.value <=> a.value }
     else
-        @years = Year.order("value DESC")
+        @years = Year.find(:all, :order => @order_by + " " + @direction)
     end
 
     respond_to do |format|

@@ -2,7 +2,7 @@
     <% @jobs.each do |job| %>
         <li>
             <%= render :partial => 'jobs/link_to_job', :locals => { :job => job } %>,
-            <span class="job-status"><%= job.status %></span>
+            <span class="deemphasized job-status"><%= job.status %></span>
             <p>
                 <%= job.employer %>,
                 <%= render :partial => 'years/link_to_year', :locals => {:year => job.start_year} %>

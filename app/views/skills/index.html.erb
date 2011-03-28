@@ -1,11 +1,11 @@
 <% content_for :head do %>
-    <h1>Listing skills</h1>
+    <hgroup>
+        <h1>Listing skills</h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
-    <%= render :partial => 'skills/full_list' %>
-
-    <br />
-
-    <%= link_to 'New Skill', new_skill_path %>
+    <section class="primary extended">
+        <%= render :partial => 'skills/full_list' %>
+    </section>
 <% end %>

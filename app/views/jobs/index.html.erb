@@ -1,12 +1,14 @@
 <% content_for :head do %>
-    <h1>
-        Listing jobs
-        <% if !@skill.nil? %>
-            <%= ' involving ' + @skill.title %>
-        <% elsif !@software.nil? %>
-            <%= 'involving ' + @software.title %>
-        <% end %>
-    </h1>
+    <hgroup>
+        <h1>
+            Listing jobs
+            <% if !@skill.nil? %>
+                <%= ' involving ' + @skill.title %>
+            <% elsif !@software.nil? %>
+                <%= 'involving ' + @software.title %>
+            <% end %>
+        </h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>

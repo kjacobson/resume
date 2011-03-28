@@ -22,15 +22,16 @@
  */
 
 body {
-    font-family: Arial, sans-serif;
+    /* also "Lucida Grande","Lucida Sans Unicode" */
+    font-family: "Lucida Sans",Geneva,Verdana,sans-serif;
     font-size: 100%;
     line-height: 1.5em;
 }
     header h1 {
-        font-size: 3em;
+        font-size: 2.25em;
         font-weight: normal;
         line-height: 1.5em;
-        margin: 0.75em 0 0;
+        margin: 1em 0 0;
     }
     header h2 {
         font-size: 1.5em;
@@ -47,7 +48,7 @@ body {
         font-size: 1.5em;
         font-weight: normal;
         line-height: 1.5em;
-        margin: 0.75em 0 0;
+        margin: 0.375em 0 0;
     }
     section h2 {
         font-weight: normal;
@@ -55,7 +56,7 @@ body {
     section.primary p {
         font-size: 1em;
         line-height: 1.5em;
-        margin: 0 0 1em;
+        margin: 0 0 0.75em;
     }
         section.primary .job-list .job-title {
             font-size: 1.125em;
@@ -70,6 +71,18 @@ footer p {
     font-size: 0.875em;
 }
 
+/* LINKS */
+a:link,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+
+/* BREADCRUMBS */
+.breadcrumb-separator {
+    font-weight: bold;
+}
+
 /* HEADINGS */
 h1 a,
 h2 a {
@@ -77,7 +90,7 @@ h2 a {
 }
 
 /* TABLES */
-section.primary.extended th {
+section.primary th {
     font-size: 1.3125em;    
 }
     th a {
@@ -85,6 +98,9 @@ section.primary.extended th {
     }
 
 /* LISTS */
+.highlight-list li {
+    margin-bottom: 0.75em;
+}
 .primary-type-sub-list {
     margin-left: 1.5em;
     padding: 0;
@@ -101,9 +117,6 @@ section.primary.extended th {
     }
 
 /* DETAILS (<dl>s) */
-.primary-type-details dt {
-    font-weight: bold;
-}
 .primary-type-details dd {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
 }

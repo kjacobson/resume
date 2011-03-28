@@ -12,7 +12,7 @@ class Skill < ActiveRecord::Base
         WHERE skills.id = #{self.id}
         ORDER BY years.value DESC', :uniq => true
     has_many :highlights, :dependent => :destroy
-
+    
     def shortest_name
         if !abbreviation.nil? and abbreviation != ""
             return abbreviation
@@ -26,8 +26,15 @@ class Skill < ActiveRecord::Base
         skills = skills.sort! { |a,b| b.job_skills.count <=> a.job_skills.count }
         rank = skills.size
         skills.each do |skill|
-            Skill.update(skill.id, :rank => rank)
+            skill.update_rank(rank)
             rank -= 1
+        end
+    end
+
+    def update_rank(rank)
+        self.rank = rank
+        if self.save
+             return true
         end
     end
 end

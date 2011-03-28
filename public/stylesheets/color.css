@@ -1,5 +1,41 @@
+/*
+ *
+ * COLOR PALETTE
+ * http://www.colourlovers.com/palette/1510816/Dulce
+ *
+ * Near-neutral: #5f5245;
+ * Darkest: #bb6318;
+ * Middle: #e08529;
+ * Light: #f9ca7e;
+ * Lightest: #f5d99A;
+ *
+ * Default text: #444;
+ * Deepmhasized text: #888;
+ */
+
 body {
     color: #444;
+}
+.deemphasized {
+    color: #888;
+}
+
+/* JOB (etc) details */
+section.primary .primary-type-details dt {
+    color: #888;
+}
+
+/* NAV */
+header nav {
+    background-color: #444;    
+}
+    header nav a {
+        color: #fff;
+    }
+
+/* BREADCRUMBS */
+.breadcrumb-separator {
+    color: #888;
 }
 
 /* HEADINGS */
@@ -7,4 +43,35 @@ h1 a:link,
 h1 a:active,
 h1 a:visited {
     color: #444;
+}
+h2 a:link,
+h2 a:visited {
+    color: #5f5245;
+}
+h2 a:hover,
+h2 a:focus {
+    color: #e08529;
+}
+header h2 {
+    color: #888;
+}
+
+/* TABLES */
+th a:link {
+    color: #5f5245;    
+}
+
+/* LINKS */
+a:link {
+    color: #e08529;
+}
+a:active {
+    color: #f9ca7e;
+}
+a:visited {
+    color: #bb6318;
+}
+a:link:hover,
+a:link:focus {
+    color: #bb6318;    
 }
