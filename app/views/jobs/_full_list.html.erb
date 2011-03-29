@@ -1,24 +1,16 @@
 <table>
     <tr>
         <th class="d30">
-            <a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
-                Title
-            </a>
+            <%= render :partial => 'shared/sortable_link', :locals => { :header => 'Title', :column_name => 'title' } %>
         </th>
         <th class="d20">
-            <a href="<%= sorting_href('employer',@order_by, @direction) %>" rel="canonical" title="Order by employer">
-                Employer
-            </a>
+            <%= render :partial => 'shared/sortable_link', :locals => { :header => 'Employer', :column_name => 'employer' } %>
         </th>
         <th class="d20">
-            <a href="<%= sorting_href('start_year',@order_by, @direction) %>" rel="canonical" title="Order by start year">
-                Years
-            </a>
+            <%= render :partial => 'shared/sortable_link', :locals => { :header => 'Years', :column_name => 'start_year' } %>
         </th>
         <th class="d30">
-            <a href="<%= sorting_href('short_desc',@order_by, @direction) %>" rel="canonical" title="Order by description">
-                Brief Description
-            </a>
+            <%= render :partial => 'shared/sortable_link', :locals => { :header => 'Brief Description', :column_name => 'short_desc' } %>
         </th>
         <th></th>
     </tr>

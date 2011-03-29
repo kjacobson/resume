@@ -94,7 +94,7 @@ h2 a {
 section.primary th {
     font-size: 1.3125em;    
 }
-    th a {
+    th .sort-link {
         text-decoration: none;    
     }
 

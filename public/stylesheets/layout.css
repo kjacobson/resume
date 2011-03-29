@@ -120,8 +120,7 @@ section.primary.extended table {
     width: 100%;
 }
     th, td {
-        padding-right: 1.25%;
-        padding-left: 1.25%;
+        padding: 0.1875em 1.25%;
         text-align: left;
     }
     th.numericData,
@@ -144,6 +143,16 @@ section.primary.extended table {
     td.d40 {
         width: 37.5%;
     }
+        th .sort-link {
+            background: transparent url("/images/icons/sortable.gif") no-repeat right center;
+            padding-right: 35px;
+        }
+        th .sort-link.desc {
+            background-image: url("/images/icons/sort-desc.gif");
+        }
+        th .sort-link.asc {
+            background-image: url("/images/icons/sort-asc.gif");
+        }
 
 
 /* LISTS */

@@ -2,15 +2,11 @@
     <tr>
         <% if !current_user.nil? %>
             <th class="d10 numericData">
-                <a href="<%= sorting_href('id',@order_by, @direction) %>" rel="canonical" title="Order by ID">
-                    ID
-                </a>
+                <%= render :partial => 'shared/sortable_link', :locals => { :header => 'ID', :column_name => 'id' } %>
             </th>
         <% end %>
         <th class="d40">
-            <a href="<%= sorting_href('title',@order_by, @direction) %>" rel="canonical" title="Order by title">
-                Title
-            </a>
+            <%= render :partial => 'shared/sortable_link', :locals => { :header => 'Title', :column_name => 'title' } %>
         </th>
     </tr>
 
