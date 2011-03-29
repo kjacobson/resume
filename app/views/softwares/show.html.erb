@@ -1,18 +1,14 @@
 <% content_for :head do %>
     <hgroup>
         <h1>
-          <%= @software.title %>
+          <%= decode(@software.title) %>
         </h1>
     </hgroup>
 <% end %>
 
 <% content_for :main do %>
     <section class="primary">
-        <h2>Positions involving <%= @software.title %></h2>
+        <h2>Positions involving <%= decode(@software.title) %></h2>
         <%= render :partial => 'jobs/small_list' %>
-
-
-        <%= link_to 'Edit', edit_software_path(@software) %> |
-        <%= link_to 'Back', softwares_path %>
     </section>
 <% end %>

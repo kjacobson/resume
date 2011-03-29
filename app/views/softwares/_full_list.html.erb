@@ -21,7 +21,7 @@
             <% end %>
             <td>
                 <a href="/softwares/<%= software.id %>" rel="internal" title="See jobs this application was used in">
-                    <%= software.title %>
+                    <%= decode(software.title) %>
                 </a>
             </td>
         </tr>
