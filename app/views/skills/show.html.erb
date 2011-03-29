@@ -1,14 +1,14 @@
 <% content_for :head do %>
     <hgroup>
         <h1 class="primary-type-title skill-title">
-          <%= @skill.title %>
+          <%= decode(@skill.title) %>
         </h1>
     </hgroup>
 <% end %>
 
 <% content_for :main do %>
     <section class="primary">
-        <h1>Positions involving <%= @skill.title %></h1>
+        <h1>Positions involving <%= decode(@skill.title) %></h1>
         <%= render :partial => 'jobs/small_list' %>
 
         <% if current_user %>

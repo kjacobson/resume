@@ -28,14 +28,14 @@
             <td>
                 <%= render :partial => 'jobs/link_to_job', :locals => {:job => job} %>
             </td>
-            <td><%= job.employer %></td>
+            <td><%= decode(job.employer) %></td>
             <td>
                 <%= render :partial => 'years/link_to_year', :locals => {:year => job.start_year} %>
                 &ndash;
                 <%= render :partial => 'years/link_to_year', :locals => {:year => job.end_year} %>
             </td>
             <td>
-                <%= job.short_desc %>
+                <%= decode(job.short_desc) %>
             </td>
         </tr>
     <% end %>

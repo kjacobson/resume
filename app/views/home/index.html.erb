@@ -19,8 +19,7 @@
         <ul class="organizational-type-list discipline-list">
             <% @disciplines.each do |discipline| %>
                 <li>
-                    <a href="/disciplines/<%= discipline.id %>/" rel="internal" title="See jobs and skills involving this discipline">
-                        <%= discipline.title %></a>: <%= discipline.jobs_using_count %>/<%= jobs_count %>
+                    <%= render :partial => 'disciplines/link_to_discipline', :locals => { :discipline => discipline } %>: <%= discipline.jobs_using_count %>/<%= jobs_count %>
                 </li>
             <% end %>
         </ul>

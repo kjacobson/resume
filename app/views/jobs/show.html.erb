@@ -1,11 +1,11 @@
 <% content_for :head do %>
     <hgroup>
         <h1 class="primary-type-title job-title">
-          <%= @job.title %>
+          <%= decode(@job.title) %>
         </h1>
     </hgroup>
     <p>
-      <%= @job.short_desc %>
+      <%= decode(@job.short_desc) %>
     </p>
 <% end %>
 
@@ -16,16 +16,16 @@
 
         <dl class="primary-type-details job-details">
             <dt>Employer</dt>
-            <dd><%= @job.employer %></dd>
+            <dd><%= decode(@job.employer) %></dd>
 
             <% if !@job.status.nil? and @job.status != "" %>
               <dt>Status</dt>
-              <dd><%= @job.status %></dd>
+              <dd><%= decode(@job.status) %></dd>
             <% end %>
 
             <% if !@job.project.nil? and @job.project != "" %>
               <dt>Project</dt>
-              <dd><%= @job.project %></dd>
+              <dd><%= decode(@job.project) %></dd>
             <% end %>
 
             <% if !@job.url.nil? and @job.url != "" %>
@@ -49,7 +49,7 @@
             <dt>Summary</dt>
             <dd>
                 <p>
-                    <%= @job.long_desc %>
+                    <%= decode(@job.long_desc) %>
                 </p>
             </dd>
         </dl>

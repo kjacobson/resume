@@ -2,7 +2,7 @@
     <% @highlights.each do |highlight| %>
         <li>
             <em><%= render :partial => 'skills/link_to_skill', :locals => {:skill => highlight.skill} %></em>:
-            <%= highlight.description %>
+            <%= decode(highlight.description) %>
         </li>
     <% end %>
 </ul>
