@@ -11,10 +11,10 @@
     </head>
     <body>
         <header>
-            <p><%= flash[:notice] %></p>
             <nav>
                 <%= render :partial => 'home/breadcrumbs' %>
             </nav>
+            <p class="notice"><%= flash[:notice] %></p>
             <span id="pseudoBranding">Resum&eacute;trix</span>
             <%= yield :head %>
         </header>

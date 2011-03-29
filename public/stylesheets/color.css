@@ -19,6 +19,10 @@ body {
 .deemphasized {
     color: #888;
 }
+    footer {
+        background-color: #444;
+        color: #fff;
+    }
 
 /* JOB (etc) details */
 section.primary .primary-type-details dt {
@@ -36,6 +40,11 @@ header nav {
 /* BREADCRUMBS */
 .breadcrumb-separator {
     color: #888;
+}
+
+/* NOTICES */
+header p.notice {
+    background-color: #e08529;
 }
 
 /* HEADINGS */
