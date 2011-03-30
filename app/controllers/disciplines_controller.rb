@@ -4,10 +4,12 @@ class DisciplinesController < ApplicationController
   # GET /disciplines
   # GET /disciplines.xml
   def index
+    @order_by = !params[:order_by].nil? ? params[:order_by] : "title"
+    @direction = !params[:direction].nil? ? params[:direction] : "ASC"
     if !params[:job_id].nil?
-        @disciplines = Job.find(params[:job_id]).disciplines
+        @disciplines = Job.find(params[:job_id]).disciplines.order(@order_by + " " + @direction)
     else
-        @disciplines = Discipline.all
+        @disciplines = Discipline.find(:all, :order => @order_by + " " + @direction)
     end
 
     respond_to do |format|

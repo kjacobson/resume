@@ -4,7 +4,9 @@ class HighlightsController < ApplicationController
   # GET /highlights
   # GET /highlights.xml
   def index
-    @highlights = Highlight.all
+    @order_by = !params[:order_by].nil? ? params[:order_by] : "id"
+    @direction = !params[:direction].nil? ? params[:direction] : "ASC"
+    @highlights = Highlight.find(:all, :order => @order_by + " " + @direction)
 
     respond_to do |format|
       format.html # index.html.erb

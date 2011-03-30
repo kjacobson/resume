@@ -10,13 +10,13 @@
         </th>
     </tr>
 
-    <% @softwares.each do |software| %>
+    <% @disciplines.each do |discipline| %>
         <tr>
             <% if !current_user.nil? %>
-                <td><%= software.id %></td>
+                <td><%= discipline.id %></td>
             <% end %>
             <td>
-                <%= render :partial => 'softwares/link_to_software', :locals => { :software => software, :abbreviated => false } %>
+                <%= render :partial => 'disciplines/link_to_discipline', :locals => { :discipline => discipline } %>
             </td>
         </tr>
     <% end %>
