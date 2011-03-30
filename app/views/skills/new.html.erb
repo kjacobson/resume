@@ -1,9 +1,13 @@
 <% content_for :head do %>
-    <h1>New skill</h1>
+    <hgroup>
+        <h1>New skill</h1>
+    </hgroup>
 <% end %>
 
-<% content_For :main do %>
-    <%= render 'form' %>
+<% content_for :main do %>
+    <section class="primary">
+        <%= render 'form' %>
 
-    <%= link_to 'Back', skills_path %>
+        <%= link_to 'Back', skills_path %>
+    </section>
 <% end %>
