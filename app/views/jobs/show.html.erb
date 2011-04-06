@@ -4,7 +4,7 @@
           <%= decode(@job.title) %>
         </h1>
     </hgroup>
-    <p>
+    <p class="primary-type-short-desc job-short-desc">
       <%= decode(@job.short_desc) %>
     </p>
 <% end %>
@@ -12,7 +12,7 @@
 <% content_for :main do %>
     <section class="primary details job-details">
 
-        <h1>Details:</h1>
+        <h1>Details</h1>
 
         <dl class="primary-type-details job-details">
             <dt>Employer</dt>
@@ -57,19 +57,19 @@
 
     <% if @highlights.count >= 1 %>
         <section class="secondary associations associatedHighlights">
-                <h1>Highlights:</h1>
+                <h1>Highlights</h1>
                 <%= render :partial => 'highlights/list' %>
         </section>
     <% elsif @softwares.count >= 1 %>
         <section class="secondary associations associatedSoftware">
-                <h1>Software used:</h1>
+                <h1>Software used</h1>
                 <%= render :partial => 'softwares/list', :locals => { :abbreviated => false } %>
         </section>
     <% end %>
 
     <section class="secondary extended associations associatedSkills">
         <% if @skills.count >= 1 %>
-            <h1>Skills used:</h1>
+            <h1>Skills used</h1>
             <% if !@disciplines.nil? and @disciplines.count >= 1 %>
                 <%= render :partial => 'skills/small_list_by_discipline', :locals => {:disciplines => @disciplines, :skills => @skills} %>
             <% else %>

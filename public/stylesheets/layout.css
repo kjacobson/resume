@@ -44,8 +44,8 @@ body {
             }
     #main {
         overflow: hidden;
-        /* 2em to compensate for the footer, plus 2em of real padding */
-        padding-bottom: 4em;
+        /* bottom: 2em to compensate for the footer, plus 2em of real padding */
+        padding: 1em 0 4em;
     }
         section.primary {
             border-right: 1px solid #E9E7E0;
