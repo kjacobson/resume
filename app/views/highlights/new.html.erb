@@ -1,10 +1,13 @@
 <% content_for :head do %>
-    <h1>New highlight</h1>
+    <hgroup>
+        <h1>New highlight</h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
+    <section class="primary">
+        <%= render 'form' %>
 
-    <%= render 'form' %>
-
-    <%= link_to 'Back', highlights_path %>
+        <%= link_to 'Back', highlights_path %>
+    </section>
 <% end %>

@@ -1,29 +1,35 @@
 <% content_for :head do %>
-    <h1>Listing job_skills</h1>
+    <hgroup>
+        <h1>Listing job_skills</h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
-    <table>
-      <tr>
-        <th>Job ID</th>
-        <th>Skill ID</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
+    <section class="primary extended">
+        <table>
+            <tr>
+                <th class="d10">
+                    Job ID
+                </th>
+                <th class="d30">
+                    Job
+                </th>
+                <th class="d10">
+                    Skill ID
+                </th>
+                <th class="d30">
+                    Skill
+                </th>
+            </tr>
 
-    <% @job_skills.each do |job_skill| %>
-      <tr>
-        <td><%= job_skill.job_id %></td>
-        <td><%= job_skill.skill_id %></td>
-        <td><%= link_to 'Show', job_skill %></td>
-        <td><%= link_to 'Edit', edit_job_skill_path(job_skill) %></td>
-        <td><%= link_to 'Destroy', job_skill, :confirm => 'Are you sure?', :method => :delete %></td>
-      </tr>
-    <% end %>
-    </table>
-
-    <br />
-
-    <%= link_to 'New Job skill', new_job_skill_path %>
+            <% @job_skills.each do |job_skill| %>
+                <tr>
+                    <td><%= job_skill.job_id %></td>
+                    <td><%= render :partial => "jobs/link_to_job", :locals => { :job => job_skill.job } %></td>
+                    <td><%= job_skill.skill_id %></td>
+                    <td><%= render :partial => "skills/link_to_skill", :locals => { :skill => job_skill.skill } %></td>
+                </tr>
+            <% end %>
+        </table>
+    </section>
 <% end %>

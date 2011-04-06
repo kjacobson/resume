@@ -16,13 +16,8 @@
     <section class="secondary">
         <% jobs_count = Job.count %>
         <h1>Disciplines</h1>
-        <ul class="organizational-type-list discipline-list">
-            <% @disciplines.each do |discipline| %>
-                <li>
-                    <%= render :partial => 'disciplines/link_to_discipline', :locals => { :discipline => discipline } %>: <%= discipline.jobs_using_count %>/<%= jobs_count %>
-                </li>
-            <% end %>
-        </ul>
+
+        <%= render :partial => "disciplines/list" %>
     </section>
 
     <section class="secondary">

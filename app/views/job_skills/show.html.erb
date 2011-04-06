@@ -1,19 +1,17 @@
 <% content_for :head do %>
-    <p id="notice"><%= notice %></p>
+    <hgroup>
+        <h1>Job_skill <%= @job_skill.id %></h1>
+    </hgroup>
 <% end %>
 
 <% content_for :main do %>
-    <p>
-      <b>Job:</b>
-      <%= @job_skill.job_id %>
-    </p>
+    <section class="primary details job-skill-details">
+        <dl class="primary-type-details job-skill-details">
+            <dt>Job:</dt>
+            <dd><%= @job_skill.job_id %></dd>
 
-    <p>
-      <b>Skill:</b>
-      <%= @job_skill.skill_id %>
-    </p>
-
-
-    <%= link_to 'Edit', edit_job_skill_path(@job_skill) %> |
-    <%= link_to 'Back', job_skills_path %>
+            <dt>Skill:</dt>
+            <dd><%= @job_skill.skill_id %></dd>
+        </dl>
+    </section>
 <% end %>

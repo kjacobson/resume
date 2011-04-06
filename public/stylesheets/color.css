@@ -10,7 +10,8 @@
  * Lightest: #f5d99A;
  *
  * Default text: #444;
- * Deepmhasized text: #888;
+ * Deemphasized text: #888;
+ * Table-striping: #f6f6f6;
  */
 
 body {
@@ -68,6 +69,9 @@ header h2 {
 /* TABLES */
 th a:link {
     color: #5f5245;    
+}
+tr.alt {
+    background-color: #f6f6f6;
 }
 
 /* LINKS */
