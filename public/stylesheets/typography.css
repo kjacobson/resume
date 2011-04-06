@@ -106,7 +106,7 @@ section.primary th {
     margin-bottom: 0.75em;
 }
 .primary-type-sub-list {
-    margin-left: 1.5em;
+    list-style: square inside none;
     padding: 0;
 }
     section.secondary .primary-type-title {
