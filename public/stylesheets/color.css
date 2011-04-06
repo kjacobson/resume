@@ -30,9 +30,20 @@ section.primary .primary-type-details dt {
     color: #888;
 }
 
+/* HEADER */
+#pseudoBranding {
+    /* no fallback necessary, cause this is only necessary
+      if box-shadow is supported */
+    background: rgba(255,255,255,0.6);
+}
+
 /* NAV */
 header nav {
-    background-color: #444;    
+    background: #444;    
+    background: -moz-linear-gradient(center top , #666, #5f5f5f 15%, #333 95%, #000);
+    -moz-box-shadow: 0 2px 20px #ddd;
+    -webkit-box-shadow: 0 2px 20px #ddd;
+    box-shadow: 0 2px 20px #ddd;
 }
     header nav a {
         color: #fff;
