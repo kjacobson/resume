@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
     def index
-        @jobs = Job.order("end_year DESC")[0..2]
+        @jobs = Job.order("end_year DESC")[0..4]
         @disciplines = Discipline.all
         @skills = Skill.order("title ASC")
         @softwares = Software.order("rank DESC")[0..4]
