@@ -12,6 +12,7 @@
  * Default text: #444;
  * Deemphasized text: #888;
  * Table-striping: #f6f6f6;
+ * almost gray: #e9e7e0;
  */
 
 body {
@@ -20,6 +21,16 @@ body {
 .deemphasized {
     color: #888;
 }
+    section.primary {
+        background: #fdfdfd url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
+    }
+    section.secondary {
+        background: #fdfdfd url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
+        border-top: 1px solid #f6f6f6;
+    }
+    section.secondary.extended {
+        background-color: #fff;
+    }
     footer {
         background: #444;
         background: -moz-linear-gradient(center top , #666, #444 15%, #333 90%, #000);
