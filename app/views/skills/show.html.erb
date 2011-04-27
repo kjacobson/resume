@@ -17,12 +17,12 @@
         <% end %>
     </section>
 
-    <section class="secondary associations associatedHighlights">
-        <% if @highlights.count >= 1 %>
+    <% if @highlights.count >= 1 %>
+        <section class="secondary associations associatedHighlights">
             <h1>Highlights:</h1>
             <%= render :partial => 'highlights/list' %>
-        <% end %>
-    </section>
+        </section>
+    <% end %>
 
     <section class="secondary">
         <h1>Years this skill was used</h1>
