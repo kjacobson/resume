@@ -67,16 +67,16 @@
         </section>
     <% end %>
 
-    <section class="secondary extended associations associatedSkills">
-        <% if @skills.count >= 1 %>
+    <% if @skills.count >= 1 %>
+        <section class="secondary extended associations associatedSkills">
             <h1>Skills used</h1>
             <% if !@disciplines.nil? and @disciplines.count >= 1 %>
                 <%= render :partial => 'skills/small_list_by_discipline', :locals => {:disciplines => @disciplines, :skills => @skills} %>
             <% else %>
                 <%= render :partial => 'skills/small_list', :locals => {:skills => @skills} %>
             <% end %>
-        <% end %>
-    </section>
+        </section>     
+    <% end %>
 
     <% if @highlights.count >= 1 && @softwares.count >= 1 %>
         <section class="secondary associations associatedSoftware">
