@@ -50,6 +50,7 @@ body {
         section.primary {
             clear: left;
             float: left;
+            margin: 0 0 1.25%;
             padding: 0 1.25% 2em;
             overflow: auto;
             width: 57.5%; /* 4 full columns. 2 columns subtracting gutters */
