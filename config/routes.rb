@@ -17,15 +17,21 @@ Resume::Application.routes.draw do
   resources :years do
       resources :jobs
       resources :skills
+      
+      resources :job_years
   end
 
   resources :softwares do
       resources :jobs
+
+      resources :job_softwares
   end
 
   resources :skills do
       resources :jobs
       resources :years
+
+      resources :job_skills
   end
 
   resources :jobs do
@@ -33,6 +39,10 @@ Resume::Application.routes.draw do
       resources :softwares
       resources :skills
       resources :disciplines
+
+      resources :job_years
+      resources :job_skills
+      resources :job_softwares
   end
 
   resources :home

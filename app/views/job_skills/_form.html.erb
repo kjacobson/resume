@@ -13,11 +13,31 @@
 
   <div class="field">
     <%= f.label :job_id %><br />
-    <%= f.text_field :job_id %>
+    <% if !@job.nil? %>
+        <p><%= @job.title %></p>
+        <input id="job_skill_job_id" type="hidden" name="job_skill[job_id]" value="<%= @job.id %>" />
+    <% else %>
+        <select id="job_skill_job_id" name="job_skill[job_id]">
+            <option value=""></option>
+            <% @jobs.each do |job| %>
+                <option value="<%= job.id %>"><%= job.title %></option>
+            <% end %>
+        </select>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :skill_id %><br />
-    <%= f.text_field :skill_id %>
+    <% if !@skill.nil? %>
+        <p><%= @skill.title %></p>
+        <input id="job_skill_skill_id" type="hidden" name="job_skill[skill_id]" value="<%= @skill.id %>" />
+    <% else %>
+        <select id="job_skill_skill_id" name="job_skill[skill_id]">
+            <option value=""></option>
+            <% @skills.each do |skill| %>
+                <option value="<%= skill.id %>"><%= skill.title %></option>
+            <% end %>
+        </select>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

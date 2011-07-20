@@ -4,7 +4,7 @@ class JobSkillsController < ApplicationController
   # GET /job_skills
   # GET /job_skills.xml
   def index
-    @job_skills = JobSkill.all
+    @job_skills = JobSkill.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +27,13 @@ class JobSkillsController < ApplicationController
   # GET /job_skills/new.xml
   def new
     @job_skill = JobSkill.new
+    if !params[:job_id].nil?
+        @skills = Skill.find(:all)
+        @job = Job.find(params[:job_id])
+    elsif !params[:skill_id].nil?
+        @jobs = Job.find(:all)
+        @skill = Skill.find(params[:skill_id])
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +44,8 @@ class JobSkillsController < ApplicationController
   # GET /job_skills/1/edit
   def edit
     @job_skill = JobSkill.find(params[:id])
+    @job = Job.find(@job_skill.job_id)
+    @skill = Skill.find(@job_skill.skill_id)
   end
 
   # POST /job_skills
