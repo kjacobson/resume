@@ -28,6 +28,12 @@
             item = Job.find(id)
             identifier = item.employer
         end
+    elsif controller == "job_skills"
+        category = "Job/Skill Links"
+    elsif controller == "job_softwares"
+        category = "Job/Software Links"
+    elsif controller == "job_years"
+        category = "Job/Year Links"
     end
 %>
 <ul class="breadcrumbs">
@@ -54,7 +60,13 @@
             <% if action == "show" and !id.nil? %>
                 <a><%= identifier %></a>
             <% else %>
-                <a href="/<%= controller %>/<%= params[:id] %>" rel="internal" title=""><%= identifier %></a>
+                <% if !id.nil? %>
+                    <a href="/<%= controller %>/<%= params[:id] %>" rel="internal" title="">
+                        <%= identifier %>
+                    </a>
+                <% else %>
+                    <a><%= action %></a>
+                <% end %>
             <% end %>
         </li>
     <% end %>

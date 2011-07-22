@@ -21,7 +21,7 @@
             <option value=""></option>
             <% @jobs.each do |job| %>
                 <option value="<%= job.id %>"<%= " selected='selected'" if !@job.nil? && @job.id == job.id %>>
-                    <%= job.title %>
+                    <%= decode(job.title) %>
                 </option>
             <% end %>
         </select>
@@ -37,7 +37,7 @@
             <option value=""></option>
             <% @years.each do |year| %>
                 <option value="<%= year.id %>"<%= " selected='selected'" if !@year.nil? && @year.id == year.id %>>
-                    <%= year.value %>
+                    <%= decode(year.value) %>
                 </option>
             <% end %>
         </select>
