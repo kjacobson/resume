@@ -93,6 +93,9 @@ header h2 {
 th a:link {
     color: #5f5245;    
 }
+th .sort-link:visited {
+    color: #444;    
+}
 tr.alt {
     background-color: #f6f6f6;
 }
