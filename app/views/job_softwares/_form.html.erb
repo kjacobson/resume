@@ -13,11 +13,35 @@
 
   <div class="field">
     <%= f.label :job_id %><br />
-    <%= f.text_field :job_id %>
+    <% if @jobs.nil? %>
+        <p><%= @job.title %></p>
+        <input id="job_software_job_id" type="hidden" name="job_software[job_id]" value="<%= @job.id %>" />
+    <% else %>
+        <select id="job_software_job_id" name="job_software[job_id]">
+            <option value=""></option>
+            <% @jobs.each do |job| %>
+                <option value="<%= job.id %>"<%= " selected='selected'" if !@job.nil? && @job.id == job.id %>>
+                    <%= job.title %>
+                </option>
+            <% end %>
+        </select>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :software_id %><br />
-    <%= f.text_field :software_id %>
+    <% if @softwares.nil? %>
+        <p><%= @software.title %></p>
+        <input id="job_software_software_id" type="hidden" name="job_software[software_id]" value="<%= @software.id %>" />
+    <% else %>
+        <select id="job_software_software_id" name="job_software[software_id]">
+            <option value=""></option>
+            <% @softwares.each do |software| %>
+                <option value="<%= software.id %>"<%= " selected='selected'" if !@software.nil? && @software.id == software.id %>>
+                    <%= software.title %>
+                </option>
+            <% end %>
+        </select>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

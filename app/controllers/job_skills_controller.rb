@@ -4,7 +4,13 @@ class JobSkillsController < ApplicationController
   # GET /job_skills
   # GET /job_skills.xml
   def index
-    @job_skills = JobSkill.find(:all)
+    if !params[:job_id].nil?
+        @job_skills = JobSkill.find_all_by_job_id(params[:job_id])
+    elsif !params[:skill_id].nil?
+        @job_skills = JobSkill.find_all_by_skill_id(params[:skill_id])
+    else
+        @job_skills = JobSkill.find(:all)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,11 +34,14 @@ class JobSkillsController < ApplicationController
   def new
     @job_skill = JobSkill.new
     if !params[:job_id].nil?
-        @skills = Skill.find(:all)
+        @skills = Skill.find(:all, :order => "title ASC")
         @job = Job.find(params[:job_id])
     elsif !params[:skill_id].nil?
-        @jobs = Job.find(:all)
+        @jobs = Job.find(:all, :order => "title ASC")
         @skill = Skill.find(params[:skill_id])
+    else
+        @jobs = Job.find(:all, :order => "title DESC")
+        @skills = Skill.find(:all, :order => "title ASC")
     end
 
     respond_to do |format|
@@ -44,8 +53,10 @@ class JobSkillsController < ApplicationController
   # GET /job_skills/1/edit
   def edit
     @job_skill = JobSkill.find(params[:id])
-    @job = Job.find(@job_skill.job_id)
-    @skill = Skill.find(@job_skill.skill_id)
+    @jobs = Job.find(:all, :order => "title ASC")
+    @job = @jobs.select { |job| job.id == @job_skill.job_id}[0]
+    @skills = Skill.find(:all, :order => "title ASC")
+    @skill = @skills.select { | skill | skill.id == @job_skill.skill_id}[0]
   end
 
   # POST /job_skills

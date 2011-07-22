@@ -4,7 +4,13 @@ class JobYearsController < ApplicationController
   # GET /job_years
   # GET /job_years.xml
   def index
-    @job_years = JobYear.all
+    if !params[:job_id].nil?
+        @job_years = JobYear.find_all_by_job_id(params[:job_id])
+    elsif !params[:year_id].nil?
+        @job_years = JobYear.find_all_by_year_id(params[:year_id])
+    else
+        @job_years = JobYear.find(:all)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +33,16 @@ class JobYearsController < ApplicationController
   # GET /job_years/new.xml
   def new
     @job_year = JobYear.new
+    if !params[:job_id].nil?
+        @years = Year.find(:all, :order => "value DESC")
+        @job = Job.find(params[:job_id])
+    elsif !params[:year_id].nil?
+        @jobs = Job.find(:all, :order => "title ASC")
+        @year = Year.find(params[:year_id])
+    else
+        @jobs = Job.find(:all, :order => "title DESC")
+        @years = Year.find(:all, :order => "value DESC")
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +53,10 @@ class JobYearsController < ApplicationController
   # GET /job_years/1/edit
   def edit
     @job_year = JobYear.find(params[:id])
+    @jobs = Job.find(:all, :order => "title ASC")
+    @job = @jobs.select { |job| job.id == @job_year.job_id}[0]
+    @years = Year.find(:all, :order => "value ASC")
+    @year = @years.select { |year| year.id == @job_year.year_id}[0]
   end
 
   # POST /job_years

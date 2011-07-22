@@ -4,7 +4,13 @@ class JobSoftwaresController < ApplicationController
   # GET /job_softwares
   # GET /job_softwares.xml
   def index
-    @job_softwares = JobSoftware.all
+    if !params[:job_id].nil?
+        @job_softwares = JobSoftware.find_all_by_job_id(params[:job_id])
+    elsif !params[:software_id].nil?
+        @job_softwares = JobSoftware.find_all_by_software_id(params[:software_id])
+    else
+        @job_softwares = JobSoftware.find(:all)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,16 +33,25 @@ class JobSoftwaresController < ApplicationController
   # GET /job_softwares/new.xml
   def new
     @job_software = JobSoftware.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @job_software }
+    if !params[:job_id].nil?
+        @softwares = Software.find(:all, :order => "title ASC")
+        @job = Job.find(params[:job_id])
+    elsif !params[:software_id].nil?
+        @jobs = Job.find(:all, :order => "title ASC")
+        @software = Software.find(params[:software_id])
+    else
+        @softwares = Software.find(:all, :order => "title ASC")
+        @jobs = Job.find(:all, :order => "title ASC")
     end
   end
 
   # GET /job_softwares/1/edit
   def edit
     @job_software = JobSoftware.find(params[:id])
+    @jobs = Job.find(:all, :order => "title ASC")
+    @job = @jobs.select { |job| job.id == @job_software.job_id}[0]
+    @softwares = Software.find(:all, :order => "title ASC")
+    @software = @softwares.select { |software| software.id == @job_software.software_id}[0]
   end
 
   # POST /job_softwares
