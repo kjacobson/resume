@@ -49,10 +49,11 @@ class CvsController < ApplicationController
   # POST /cvs.xml
   def create    
     @cv = Cv.new(params[:cv])
+    @cv.user_id = current_user.id
 
     respond_to do |format|
       if @cv.save
-        format.html { redirect_to(@cv, :notice => 'Cv was successfully created.') }
+        format.html { redirect_to(@cv, :notice => 'Resume was successfully created.') }
         format.xml  { render :xml => @cv, :status => :created, :location => @cv }
       else
         format.html { render :action => "new" }
@@ -69,7 +70,7 @@ class CvsController < ApplicationController
 
     respond_to do |format|
       if @cv.update_attributes(params[:cv])
-        format.html { redirect_to(@cv, :notice => 'Cv was successfully updated.') }
+        format.html { redirect_to(@cv, :notice => 'Resume was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
