@@ -53,7 +53,7 @@ class CvsController < ApplicationController
 
     respond_to do |format|
       if @cv.save
-        format.html { redirect_to(@cv, :notice => 'Resume was successfully created.') }
+        format.html { redirect_to(user_cv_path, :notice => 'Resume was successfully created.') }
         format.xml  { render :xml => @cv, :status => :created, :location => @cv }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class CvsController < ApplicationController
 
     respond_to do |format|
       if @cv.update_attributes(params[:cv])
-        format.html { redirect_to(@cv, :notice => 'Resume was successfully updated.') }
+        format.html { redirect_to(user_cv_path, :notice => 'Resume was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -87,7 +87,7 @@ class CvsController < ApplicationController
     @cv.destroy
 
     respond_to do |format|
-      format.html { redirect_to(cvs_url) }
+      format.html { redirect_to(user_cvs_path) }
       format.xml  { head :ok }
     end
   end

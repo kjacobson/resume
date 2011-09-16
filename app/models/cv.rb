@@ -1,5 +1,5 @@
 class Cv < ActiveRecord::Base
-    belongs_to :users
+    belongs_to :user
 
     has_many :jobs
     has_many :skills

@@ -54,7 +54,7 @@ class SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.save
-        format.html { redirect_to("/softwares/#{@software.slug}", :notice => 'Software was successfully created.') }
+        format.html { redirect_to(user_cv_path + "/softwares/#{@software.slug}", :notice => 'Software was successfully created.') }
         format.xml  { render :xml => @software, :status => :created, :location => @software }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class SoftwaresController < ApplicationController
 
     respond_to do |format|
       if @software.update_attributes(params[:software])
-        format.html { redirect_to(@software, :notice => 'Software was successfully updated.') }
+        format.html { redirect_to(user_cv_path + "/softwares/#{@software.slug}", :notice => 'Software was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -86,7 +86,7 @@ class SoftwaresController < ApplicationController
     @software.destroy
 
     respond_to do |format|
-      format.html { redirect_to(softwares_url) }
+      format.html { redirect_to(user_cv_softwares_path) }
       format.xml  { head :ok }
     end
   end

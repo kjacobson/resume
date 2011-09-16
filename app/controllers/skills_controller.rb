@@ -65,7 +65,7 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       if @skill.save
-        format.html { redirect_to("/skills/#{@skill.slug}", :notice => 'Skill was successfully created.') }
+        format.html { redirect_to(user_cv_path + "/skills/#{@skill.slug}", :notice => 'Skill was successfully created.') }
         format.xml  { render :xml => @skill, :status => :created, :location => @skill }
       else
         format.html { render :action => "new" }
@@ -81,7 +81,7 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       if @skill.update_attributes(params[:skill])
-        format.html { redirect_to("/skills/#{@skill.slug}", :notice => 'Skill was successfully updated.') }
+        format.html { redirect_to(user_cv_path + "/skills/#{@skill.slug}", :notice => 'Skill was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -97,7 +97,7 @@ class SkillsController < ApplicationController
     @skill.destroy
 
     respond_to do |format|
-      format.html { redirect_to(skills_url) }
+      format.html { redirect_to(user_cv_skills_path) }
       format.xml  { head :ok }
     end
   end

@@ -65,7 +65,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to(@job, :notice => 'Job was successfully created.') }
+        format.html { redirect_to(user_cv_job_path, :notice => 'Job was successfully created.') }
         format.xml  { render :xml => @job, :status => :created, :location => @job }
       else
         format.html { render :action => "new" }
@@ -81,7 +81,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.update_attributes(params[:job])
-        format.html { redirect_to(@job, :notice => 'Job was successfully updated.') }
+        format.html { redirect_to(user_cv_job_path, :notice => 'Job was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -97,7 +97,7 @@ class JobsController < ApplicationController
     @job.destroy
 
     respond_to do |format|
-      format.html { redirect_to(jobs_url) }
+      format.html { redirect_to(user_cv_jobs_path) }
       format.xml  { head :ok }
     end
   end

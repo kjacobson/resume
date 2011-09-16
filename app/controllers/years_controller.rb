@@ -62,7 +62,7 @@ class YearsController < ApplicationController
 
     respond_to do |format|
       if @year.save
-        format.html { redirect_to("/years/#{@year.value}", :notice => 'Year was successfully created.') }
+        format.html { redirect_to(user_cv_path + "/years/#{@year.value}", :notice => 'Year was successfully created.') }
         format.xml  { render :xml => @year, :status => :created, :location => @year }
       else
         format.html { render :action => "new" }
@@ -78,7 +78,7 @@ class YearsController < ApplicationController
 
     respond_to do |format|
       if @year.update_attributes(params[:year])
-        format.html { redirect_to("/years/#{@year.value}", :notice => 'Year was successfully updated.') }
+        format.html { redirect_to(user_cv_path + "/years/#{@year.value}", :notice => 'Year was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -94,7 +94,7 @@ class YearsController < ApplicationController
     @year.destroy
 
     respond_to do |format|
-      format.html { redirect_to(years_url) }
+      format.html { redirect_to(user_cv_years_path) }
       format.xml  { head :ok }
     end
   end

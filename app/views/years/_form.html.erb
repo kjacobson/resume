@@ -1,4 +1,4 @@
-<%= form_for(@year) do |f| %>
+<%= form_for(@year, :url => user_cv_highlight_path) do |f| %>
   <% if @year.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@year.errors.count, "error") %> prohibited this year from being saved:</h2>

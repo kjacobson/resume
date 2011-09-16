@@ -54,7 +54,7 @@ class DisciplinesController < ApplicationController
 
     respond_to do |format|
       if @discipline.save
-        format.html { redirect_to(@discipline, :notice => 'Discipline was successfully created.') }
+        format.html { redirect_to(user_cv_discipline_path, :notice => 'Discipline was successfully created.') }
         format.xml  { render :xml => @discipline, :status => :created, :location => @discipline }
       else
         format.html { render :action => "new" }
@@ -70,7 +70,7 @@ class DisciplinesController < ApplicationController
 
     respond_to do |format|
       if @discipline.update_attributes(params[:discipline])
-        format.html { redirect_to(@discipline, :notice => 'Discipline was successfully updated.') }
+        format.html { redirect_to(user_cv_discipline_path, :notice => 'Discipline was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -86,7 +86,7 @@ class DisciplinesController < ApplicationController
     @discipline.destroy
 
     respond_to do |format|
-      format.html { redirect_to(disciplines_url) }
+      format.html { redirect_to(user_cv_disciplines_path) }
       format.xml  { head :ok }
     end
   end

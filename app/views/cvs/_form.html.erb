@@ -1,4 +1,4 @@
-<%= form_for(@cv) do |f| %>
+<%= form_for(@cv, :url => user_cv_path) do |f| %>
   <% if @cv.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cv.errors.count, "error") %> prohibited this resume from being saved:</h2>

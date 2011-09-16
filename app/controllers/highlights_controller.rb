@@ -49,7 +49,7 @@ class HighlightsController < ApplicationController
 
     respond_to do |format|
       if @highlight.save
-        format.html { redirect_to(@highlight, :notice => 'Highlight was successfully created.') }
+        format.html { redirect_to(user_cv_highlight_path, :notice => 'Highlight was successfully created.') }
         format.xml  { render :xml => @highlight, :status => :created, :location => @highlight }
       else
         format.html { render :action => "new" }
@@ -65,7 +65,7 @@ class HighlightsController < ApplicationController
 
     respond_to do |format|
       if @highlight.update_attributes(params[:highlight])
-        format.html { redirect_to(@highlight, :notice => 'Highlight was successfully updated.') }
+        format.html { redirect_to(user_cv_highlight_path, :notice => 'Highlight was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -81,7 +81,7 @@ class HighlightsController < ApplicationController
     @highlight.destroy
 
     respond_to do |format|
-      format.html { redirect_to(highlights_url) }
+      format.html { redirect_to(user_cv_highlights_path) }
       format.xml  { head :ok }
     end
   end

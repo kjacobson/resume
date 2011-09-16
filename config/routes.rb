@@ -18,7 +18,7 @@ Resume::Application.routes.draw do
           resources :softwares
           resources :years
           resources :disciplines
-          resources :highlights
+          resources :highlights 
           resources :job_skills
           resources :job_softwares
           resources :job_years
