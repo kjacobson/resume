@@ -1,0 +1,9 @@
+- Add support for multiple users and resumes
+    - resumes table with user_id
+    - add resume_id to each entry in other tables
+- Add reason for leaving to jobs table
+- Add optional address, phone number, etc. to users table. display it
+- Go with mobile-first design. Colors and typography in separate stylesheets
+- For desktop site, use box-flex, rems, etc.
+- LESS/SCSS
+- Make join table entry a multiselect process

@@ -1,5 +1,6 @@
 class JobSkillsController < ApplicationController
   before_filter :require_known_user, :only => [:new, :create, :edit, :update, :destroy]
+  before_filter { |c| c.get_user_and_cv params[:user_id], params[:cv_id]}
 
   # GET /job_skills
   # GET /job_skills.xml

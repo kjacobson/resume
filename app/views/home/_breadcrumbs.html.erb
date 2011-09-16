@@ -1,5 +1,8 @@
 <%
     controller = params[:controller]
+    if controller == "cvs"
+        controller = "resumes"
+    end
     category = controller.capitalize
     id = params[:id]
     action = params[:action]
@@ -10,22 +13,22 @@
     elsif controller == "softwares"
         category = "Software Programs"
         if !id.nil?
-            item = Software.find_by_slug(id)
+            item = @software
             identifier = item.title
         end
     elsif controller == "skills"
         if !id.nil?
-            item = Skill.find_by_slug(id)
+            item = @skill
             identifier = item.title
         end
     elsif controller == "years"
         if !id.nil?
-            item = Year.find_by_value(id)
+            item = @year
             identifier = id
         end
     elsif controller == "jobs"
         if !id.nil?
-            item = Job.find(id)
+            item = @job
             identifier = item.employer
         end
     elsif controller == "job_skills"
@@ -39,7 +42,7 @@
 <ul class="breadcrumbs">
     <li>
         <% if controller != "home" %>
-            <a href="/" rel="internal" title="">Home</a>
+            <a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/" rel="internal" title="">Home</a>
         <% else %>
             <a>Home</a>
         <% end %>
@@ -50,7 +53,7 @@
             <% if action  == "index" %>
                 <a><%= category %></a>
             <% else %>
-                <a href="/<%= controller %>/" rel="internal" title="See all <%= category %>"><%= category %></a>
+                <a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/<%= controller %>/" rel="internal" title="See all <%= category %>"><%= category %></a>
             <% end %>
         </li>
     <% end %>
@@ -61,7 +64,7 @@
                 <a><%= identifier %></a>
             <% else %>
                 <% if !id.nil? %>
-                    <a href="/<%= controller %>/<%= params[:id] %>" rel="internal" title="">
+                    <a href=/users/<%= @user.id %>/cvs/<%= @cv.id %>"/<%= controller %>/<%= params[:id] %>" rel="internal" title="">
                         <%= identifier %>
                     </a>
                 <% else %>

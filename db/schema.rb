@@ -10,12 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110326180804) do
+ActiveRecord::Schema.define(:version => 20110914060023) do
+
+  create_table "cvs", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "disciplines", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cv_id"
   end
 
   create_table "highlights", :force => true do |t|
@@ -24,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cv_id"
   end
 
   add_index "highlights", ["job_id"], :name => "index_highlights_on_job_id"
@@ -34,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.integer  "skill_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cv_id"
   end
 
   add_index "job_skills", ["job_id"], :name => "index_job_skills_on_job_id"
@@ -44,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.integer  "software_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cv_id"
   end
 
   add_index "job_softwares", ["job_id"], :name => "index_job_softwares_on_job_id"
@@ -54,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.integer  "year_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cv_id"
   end
 
   add_index "job_years", ["job_id"], :name => "index_job_years_on_job_id"
@@ -73,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.integer  "start_year"
     t.integer  "end_year"
     t.string   "status"
+    t.integer  "cv_id"
   end
 
   add_index "jobs", ["end_month"], :name => "index_jobs_on_end_month"
@@ -88,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.integer  "discipline_id"
     t.integer  "rank"
     t.string   "slug"
+    t.integer  "cv_id"
   end
 
   add_index "skills", ["discipline_id"], :name => "index_skills_on_discipline_id"
@@ -98,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.datetime "updated_at"
     t.string   "slug"
     t.integer  "rank"
+    t.integer  "cv_id"
   end
 
   create_table "users", :force => true do |t|
@@ -113,6 +127,7 @@ ActiveRecord::Schema.define(:version => 20110326180804) do
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cv_id"
   end
 
   add_index "years", ["value"], :name => "index_years_on_value", :unique => true

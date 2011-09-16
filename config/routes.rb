@@ -1,6 +1,29 @@
 Resume::Application.routes.draw do
+  resources :cvs do
+      resources :jobs
+      resources :skills
+      resources :softwares
+      resources :years
+      resources :disciplines
+      resources :highlights
+      resources :job_skills
+      resources :job_softwares
+      resources :job_years
+  end
 
-  resources :users
+  resources :users do
+      resources :cvs do
+          resources :jobs
+          resources :skills
+          resources :softwares
+          resources :years
+          resources :disciplines
+          resources :highlights
+          resources :job_skills
+          resources :job_softwares
+          resources :job_years
+      end
+  end
 
   resources :highlights
 
@@ -52,7 +75,7 @@ Resume::Application.routes.draw do
   resources :users, :user_sessions
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
-  
+
 #  match '/years/:id/jobs', :to => 'jobs#index'
 #  match '/years/:id/skills', :to => 'skills#index'
 #  match '/softwares/:id/jobs', :to => 'jobs/#index'

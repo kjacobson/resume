@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def get_user_and_cv user_id, cv_id
+    @user = User.find(user_id)
+    @cv = @user.cvs.find(cv_id)
+  end
+
   private
 
   def current_user_session

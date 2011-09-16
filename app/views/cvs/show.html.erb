@@ -1,0 +1,45 @@
+<% content_for :head do %>
+    <hgroup>
+        <h1>Kyle Jacobson</h1>
+        <h2>Web interaction design and development</h2>
+    </hgroup>
+<% end %>
+
+<% content_for :main do %>
+    <section class="primary">
+        <h1>Recent Positions/Projects</h1>
+
+        <%= render :partial => "jobs/small_list" %>
+        [&hellip;] <a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/jobs" rel="internal" title="">See all jobs</a>
+    </section>
+
+    <section class="secondary">
+        <h1>
+            <a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/discplines" rel="internal" title="See a list of disciplines in which I've worked">Disciplines</a>
+        </h1>
+
+        <%= render :partial => "disciplines/list" %>
+    </section>
+
+    <section class="secondary">
+        <h1>
+            <a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/softwares" rel="internal" title="See a list of software applications I've used professionally">Software</a>
+        </h1>
+
+        <%= render :partial => "softwares/list", :locals => { :abbreviated => true} %>
+    </section>
+
+    <section class="secondary extended">
+        <h1>
+            <a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/skills" rel="internal" title="See a list of my skills">Skills</a>
+        </h1>
+
+        <%= render :partial => "skills/small_list_by_discipline", :locals => { :disciplines => @disciplines, :skills => @skills } %>
+    </section>
+
+    <section class="secondary extended">
+        <h1>Education</h1>
+        <h2>Northwestern University</h2>
+        <p>Graduated in 2009 with a BA (honors) in philosophy and a 3.495 GPA</p>
+    </section>
+<% end %>
