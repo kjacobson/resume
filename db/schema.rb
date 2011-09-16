@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110916013648) do
+ActiveRecord::Schema.define(:version => 20110916042055) do
 
   create_table "cvs", :force => true do |t|
     t.datetime "created_at"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20110916013648) do
     t.integer  "end_year"
     t.string   "status"
     t.integer  "cv_id"
+    t.text     "reason"
   end
 
   add_index "jobs", ["end_month"], :name => "index_jobs_on_end_month"

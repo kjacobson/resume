@@ -9,3 +9,4 @@
 - LESS/SCSS
 - Make join table entry a multiselect process
 - Years do not need to be tied to users/cvs
+- Make job status a dropdown
