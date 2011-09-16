@@ -46,6 +46,7 @@ class HighlightsController < ApplicationController
   # POST /highlights.xml
   def create
     @highlight = Highlight.new(params[:highlight])
+    @highlight.cv_id = @cv.id
 
     respond_to do |format|
       if @highlight.save

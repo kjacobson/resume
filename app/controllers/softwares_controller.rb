@@ -51,6 +51,7 @@ class SoftwaresController < ApplicationController
   # POST /softwares.xml
   def create
     @software = Software.new(params[:software])
+    @software.cv_id = @cv.id
 
     respond_to do |format|
       if @software.save

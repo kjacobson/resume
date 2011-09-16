@@ -51,6 +51,7 @@ class DisciplinesController < ApplicationController
   # POST /disciplines.xml
   def create
     @discipline = Discipline.new(params[:discipline])
+    @discipline.cv_id = @cv.id
 
     respond_to do |format|
       if @discipline.save

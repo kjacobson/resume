@@ -6,11 +6,11 @@ class JobSkillsController < ApplicationController
   # GET /job_skills.xml
   def index
     if !params[:job_id].nil?
-        @job_skills = JobSkill.find_all_by_job_id(params[:job_id])
+        @job_skills = @user.job_skills.find_all_by_job_id(params[:job_id])
     elsif !params[:skill_id].nil?
-        @job_skills = JobSkill.find_all_by_skill_id(params[:skill_id])
+        @job_skills = @user.job_skills.find_all_by_skill_id(params[:skill_id])
     else
-        @job_skills = JobSkill.find(:all)
+        @job_skills = @user.job_skills.find(:all)
     end
 
     respond_to do |format|
@@ -22,7 +22,7 @@ class JobSkillsController < ApplicationController
   # GET /job_skills/1
   # GET /job_skills/1.xml
   def show
-    @job_skill = JobSkill.find(params[:id])
+    @job_skill = @user.job_skills.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,16 +33,16 @@ class JobSkillsController < ApplicationController
   # GET /job_skills/new
   # GET /job_skills/new.xml
   def new
-    @job_skill = JobSkill.new
+    @job_skill = @user.job_skills.new
     if !params[:job_id].nil?
-        @skills = Skill.find(:all, :order => "title ASC")
-        @job = Job.find(params[:job_id])
+        @skills = @user.skills.find(:all, :order => "title ASC")
+        @job = @user.jobs.find(params[:job_id])
     elsif !params[:skill_id].nil?
-        @jobs = Job.find(:all, :order => "title ASC")
-        @skill = Skill.find(params[:skill_id])
+        @jobs = @user.jobs.find(:all, :order => "title ASC")
+        @skill = @user.skills.find(params[:skill_id])
     else
-        @jobs = Job.find(:all, :order => "title DESC")
-        @skills = Skill.find(:all, :order => "title ASC")
+        @jobs = @user.jobs.find(:all, :order => "title DESC")
+        @skills = @user.skills.find(:all, :order => "title ASC")
     end
 
     respond_to do |format|
@@ -53,21 +53,23 @@ class JobSkillsController < ApplicationController
 
   # GET /job_skills/1/edit
   def edit
-    @job_skill = JobSkill.find(params[:id])
-    @jobs = Job.find(:all, :order => "title ASC")
+    @job_skill = @user.job_skills.find(params[:id])
+
+    @jobs = @user.jobs.find(:all, :order => "title ASC")
     @job = @jobs.select { |job| job.id == @job_skill.job_id}[0]
-    @skills = Skill.find(:all, :order => "title ASC")
+    @skills = @user.skills.find(:all, :order => "title ASC")
     @skill = @skills.select { | skill | skill.id == @job_skill.skill_id}[0]
   end
 
   # POST /job_skills
   # POST /job_skills.xml
   def create
-    @job_skill = JobSkill.new(params[:job_skill])
+    @job_skill = @user.job_skills.new(params[:job_skill])
+    @job_skill.cv_id = @cv.id    
 
     respond_to do |format|
       if @job_skill.save
-        format.html { redirect_to(@job_skill, :notice => 'Job skill was successfully created.') }
+        format.html { redirect_to(user_cv_job_skill_path, :notice => 'Job skill was successfully created.') }
         format.xml  { render :xml => @job_skill, :status => :created, :location => @job_skill }
       else
         format.html { render :action => "new" }
@@ -79,11 +81,11 @@ class JobSkillsController < ApplicationController
   # PUT /job_skills/1
   # PUT /job_skills/1.xml
   def update
-    @job_skill = JobSkill.find(params[:id])
+    @job_skill = @user.job_skills.find(params[:id])
 
     respond_to do |format|
       if @job_skill.update_attributes(params[:job_skill])
-        format.html { redirect_to(@job_skill, :notice => 'Job skill was successfully updated.') }
+        format.html { redirect_to(user_cv_job_skill_path, :notice => 'Job skill was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -95,11 +97,11 @@ class JobSkillsController < ApplicationController
   # DELETE /job_skills/1
   # DELETE /job_skills/1.xml
   def destroy
-    @job_skill = JobSkill.find(params[:id])
+    @job_skill = @user.job_skills.find(params[:id])
     @job_skill.destroy
 
     respond_to do |format|
-      format.html { redirect_to(job_skills_url) }
+      format.html { redirect_to(user_cv_job_skill_path) }
       format.xml  { head :ok }
     end
   end

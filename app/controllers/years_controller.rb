@@ -59,6 +59,7 @@ class YearsController < ApplicationController
   # POST /years.xml
   def create
     @year = Year.new(params[:year])
+    @year.cv_id = @cv.id
 
     respond_to do |format|
       if @year.save

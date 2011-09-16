@@ -62,6 +62,7 @@ class SkillsController < ApplicationController
   # POST /skills.xml
   def create
     @skill = Skill.new(params[:skill])
+    @skill.cv_id = @cv.id
 
     respond_to do |format|
       if @skill.save
