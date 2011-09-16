@@ -1,21 +1,38 @@
-<h1>Listing cvs</h1>
-
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cvs.each do |cv| %>
-  <tr>
-    <td><%= link_to 'Show', cv %></td>
-    <td><%= link_to 'Edit', edit_cv_path(cv) %></td>
-    <td><%= link_to 'Destroy', cv, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :head do %>
+    <hgroup>
+        <h1><%= @user.name %>&rsquo;s Resumes</h1>
+    </hgroup>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Cv', new_cv_path %>
+<% content_for :main do %>
+    <section class="primary">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Link</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @cvs.each do |cv| %>
+                    <tr>
+                        <td>
+                            <%= cv.id %>
+                        </td>
+                        <td>
+                            <a href="/users/<%= @user.id %>/cvs/<%= cv.id %>/" rel="internal" title="View this resume">
+                                /users/<%= @user.id %>/cvs/<%= cv.id %>/
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/users/<%= @user.id %>/cvs/<%= cv.id %>/edit" rel="internal" title="Edit this resume">
+                                [Edit]
+                            </a>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </section>
+<% end %>
