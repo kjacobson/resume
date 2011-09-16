@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110914060023) do
+ActiveRecord::Schema.define(:version => 20110916010911) do
 
   create_table "cvs", :force => true do |t|
     t.datetime "created_at"
@@ -121,6 +121,8 @@ ActiveRecord::Schema.define(:version => 20110914060023) do
     t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "address"
   end
 
   create_table "years", :force => true do |t|

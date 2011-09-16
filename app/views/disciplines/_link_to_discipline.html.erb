@@ -1,2 +1,2 @@
-<a href="/users/<%= @user.id %>/cvs/<%= @cv.id %>/disciplines/<%= discipline.id %>" class="organizational-type-title discpline-title" rel="internal" title="See jobs and skills involving this discipline">
+<a href="<%= user_cv_path %>/disciplines/<%= discipline.id %>" class="organizational-type-title discpline-title" rel="internal" title="See jobs and skills involving this discipline">
     <%= decode(discipline.title) %></a>
