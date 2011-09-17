@@ -14,108 +14,97 @@
  * Table-striping: #f6f6f6;
  * almost gray: #e9e7e0;
  */
-
 body {
-    color: #444;
-}
+  color: #444444; }
+
 .deemphasized {
-    color: #888;
-}
-    section.primary {
-        background: #fff url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
-    }
-    section.secondary {
-        background: #fdfdfd url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
-        border-top: 1px solid #f6f6f6;
-    }
-    section.secondary.extended {
-        background-color: #fff;
-    }
-    footer {
-        background: #444;
-        background: -moz-linear-gradient(center top , #666, #444 15%, #333 90%, #000);
-        color: #fff;
-    }
+  color: #888888; }
+
+section.primary {
+  background: white url("/images/layout/drop-shadow.png") no-repeat 50% 100%; }
+
+section.secondary {
+  background: #fdfdfd url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
+  border-top: 1px solid #f6f6f6; }
+
+section.secondary.extended {
+  background-color: #fff; }
+
+footer {
+  background: #444444;
+  background: -moz-linear-gradient(center top, #666666, #444444 15%, #333333 90%, black);
+  color: #fff; }
 
 /* JOB (etc) details */
 section.primary .primary-type-details dt {
-    color: #888;
-}
+  color: #888888; }
 
 /* HEADER */
 #pseudoBranding {
-    /* no fallback necessary, cause this is only necessary
-      if box-shadow is supported */
-    background: rgba(255,255,255,0.6);
-}
+  /* no fallback necessary, cause this is only necessary
+    if box-shadow is supported */
+  background: rgba(255, 255, 255, 0.6); }
 
 /* NAV */
 header nav {
-    background: #444;    
-    background: -moz-linear-gradient(center top , #666, #5f5f5f 15%, #333 95%, #000);
-    -moz-box-shadow: 0 2px 20px #d3d3d3;
-    -webkit-box-shadow: 0 2px 20px #d3d3d3;
-    box-shadow: 0 2px 20px #d3d3d3;
-}
-    header nav a {
-        color: #fff;
-    }
+  background: #444444;
+  background: -moz-linear-gradient(center top, #666666, #5f5f5f 15%, #333333 95%, black);
+  -moz-box-shadow: 0 2px 20px #d3d3d3;
+  -webkit-box-shadow: 0 2px 20px #d3d3d3;
+  box-shadow: 0 2px 20px #d3d3d3; }
+
+header nav a {
+  color: #fff; }
 
 /* BREADCRUMBS */
 .breadcrumb-separator {
-    color: #888;
-}
+  color: #888888; }
 
 /* NOTICES */
 header p.notice {
-    background-color: #e08529;
-}
+  background-color: #e08529; }
 
 /* HEADINGS */
 h1 a:link,
 h1 a:active,
 h1 a:visited {
-    color: #444;
-}
+  color: #444444; }
+
 h2 a:link,
 h2 a:visited {
-    color: #5f5245;
-}
+  color: #5f5245; }
+
 h2 a:hover,
 h2 a:focus {
-    color: #e08529;
-}
+  color: #e08529; }
+
 header h2 {
-    color: #888;
-}
+  color: #888888; }
 
 /* TABLES */
 th a:link {
-    color: #5f5245;    
-}
+  color: #5f5245; }
+
 th .sort-link:visited {
-    color: #444;    
-}
+  color: #444444; }
+
 tr.alt {
-    background-color: #f6f6f6;
-}
+  background-color: #f6f6f6; }
 
 /* LINKS */
 a:link {
-    color: #e08529;
-}
+  color: #e08529; }
+
 a:active {
-    color: #f9ca7e;
-}
+  color: #f9ca7e; }
+
 a:visited {
-    color: #bb6318;
-}
+  color: #bb6318; }
+
 a:link:hover,
 a:link:focus {
-    color: #bb6318;    
-}
+  color: #bb6318; }
 
 /* LISTS */
 .primary-type-sub-list {
-    color: #d3d3d3;
-}
+  color: #d3d3d3; }

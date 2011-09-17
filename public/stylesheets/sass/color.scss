@@ -1,0 +1,131 @@
+/*
+ *
+ * COLOR PALETTE
+ * http://www.colourlovers.com/palette/1510816/Dulce
+ *
+ * Near-neutral: #5f5245;
+ * Darkest: #bb6318;
+ * Middle: #e08529;
+ * Light: #f9ca7e;
+ * Lightest: #f5d99A;
+ *
+ * Default text: #444;
+ * Deemphasized text: #888;
+ * Table-striping: #f6f6f6;
+ * almost gray: #e9e7e0;
+ */
+$nearNeutral: #5f5245;
+$darkest: #bb6318;
+$middle: #e08529;
+$light: #f9ca7e;
+$lightest: #f5d99A;
+
+$defaultText: #444;
+$deemphasizedText: #888;
+$tableStriping: #f6f6f6;
+$almostGray: #e9e7e0;
+
+body {
+    color: $defaultText;
+}
+.deemphasized {
+    color: $deemphasizedText;
+}
+    section.primary {
+        background: #fff url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
+    }
+    section.secondary {
+        background: #fdfdfd url("/images/layout/drop-shadow.png") no-repeat 50% 100%;
+        border-top: 1px solid $tableStriping;
+    }
+    section.secondary.extended {
+        background-color: #fff;
+    }
+    footer {
+        background: $defaultText;
+        background: -moz-linear-gradient(center top , #666, $defaultText 15%, #333 90%, #000);
+        color: #fff;
+    }
+
+/* JOB (etc) details */
+section.primary .primary-type-details dt {
+    color: $deemphasizedText;
+}
+
+/* HEADER */
+#pseudoBranding {
+    /* no fallback necessary, cause this is only necessary
+      if box-shadow is supported */
+    background: rgba(255,255,255,0.6);
+}
+
+/* NAV */
+header nav {
+    background: $defaultText;    
+    background: -moz-linear-gradient(center top , #666, #5f5f5f 15%, #333 95%, #000);
+    -moz-box-shadow: 0 2px 20px #d3d3d3;
+    -webkit-box-shadow: 0 2px 20px #d3d3d3;
+    box-shadow: 0 2px 20px #d3d3d3;
+}
+    header nav a {
+        color: #fff;
+    }
+
+/* BREADCRUMBS */
+.breadcrumb-separator {
+    color: $deemphasizedText;
+}
+
+/* NOTICES */
+header p.notice {
+    background-color: $middle;
+}
+
+/* HEADINGS */
+h1 a:link,
+h1 a:active,
+h1 a:visited {
+    color: $defaultText;
+}
+h2 a:link,
+h2 a:visited {
+    color: $nearNeutral
+}
+h2 a:hover,
+h2 a:focus {
+    color: $middle;
+}
+header h2 {
+    color: $deemphasizedText;
+}
+
+/* TABLES */
+th a:link {
+    color: $nearNeutral;
+}
+th .sort-link:visited {
+    color: $defaultText;
+}
+tr.alt {
+    background-color: $tableStriping;
+}
+
+/* LINKS */
+a:link {
+    color: $middle;
+}
+a:active {
+    color: $light;
+}
+a:visited {
+    color: $darkest;
+}
+a:link:hover,
+a:link:focus {
+    color: $darkest;    
+}
+
+/* LISTS */
+.primary-type-sub-list {
+    color: #d3d3d3;
+}
