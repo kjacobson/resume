@@ -2,6 +2,8 @@
     <hgroup>
         <h1><%= @user.name %></h1>
         <h2><%= @cv.title %></h2>
+        <a href="<%= user_cv_path %>/?printable=true" rel="canonical" title="View this resume in a printer&#45;friendly format">
+            [printer&#45;friendly format]</a>
     </hgroup>
 <% end %>
 
