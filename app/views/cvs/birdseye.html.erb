@@ -1,0 +1,18 @@
+<% content_for :head do %>
+    <hgroup>
+        <h1><%= @user.name %></h1>
+        <h2><%= @cv.title %></h2>
+    </hgroup>
+<% end %>
+
+<% content_for :main do %>
+    <section class="primary">
+        <h1>All Positions/Projects</h1>
+
+        <%= render :partial => "jobs/birds_eye_list" %>
+    </section>
+
+    <section class="primary">
+        <%= render :partial => "cvs/education" %>
+    </section>
+<% end %>
