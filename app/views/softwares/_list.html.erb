@@ -1,8 +1,6 @@
 <ol class="software-list">
-    <% @softwares.each do |software| %>
-        <li>
-            <%= render :partial => 'softwares/link_to_software', :locals => {:software => software} %>
-        </li>
+    <% softwares.each do |software| %>
+        <li><%= render :partial => 'softwares/link_to_software', :locals => {:software => software} %></li>
     <% end %>
 </ol>
 <% if abbreviated %>

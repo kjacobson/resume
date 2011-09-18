@@ -25,7 +25,7 @@
             <a href="/softwares" rel="internal" title="See a list of software applications I've used professionally">Software</a>
         </h1>
 
-        <%= render :partial => "softwares/list", :locals => { :abbreviated => true} %>
+        <%= render :partial => "softwares/list", :locals => { :softwares => @softwares, :abbreviated => true} %>
     </section>
 
     <section class="secondary extended">

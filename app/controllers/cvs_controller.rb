@@ -17,13 +17,18 @@ class CvsController < ApplicationController
     @user = User.find(params[:user_id])
     @cv = @user.cvs.find(params[:id])
     @jobs = @cv.jobs.order("end_year DESC")[0..6]
-    @disciplines = @cv.disciplines
-    @skills = @cv.skills.order("title ASC")
-    @softwares = @cv.softwares.order("rank DESC")[0..4]
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @cv }
+    if params[:printable].nil? || params[:printable] != "true"
+        @disciplines = @cv.disciplines
+        @skills = @cv.skills.order("title ASC")
+        @softwares = @cv.softwares.order("rank DESC")[0..4]
+        respond_to do |format|
+          format.html # show.html.erb
+          format.xml  { render :xml => @cv }
+        end
+    else
+        respond_to do |format|
+          format.html { render :template => "cvs/birdseye" }
+        end
     end
   end
 

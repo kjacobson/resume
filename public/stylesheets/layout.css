@@ -171,3 +171,17 @@ section.primary.extended table {
 section.secondary .year-list {
     width: 50%;
 }
+.job-list.birds-eye > li {
+    border: #e9e7e0 solid;
+    border-width: 0.1em 0 0;
+    margin-bottom: 0.9em;
+    padding-top: 1em;
+}
+    .job-list.birds-eye .skill-list,
+    .job-list.birds-eye .software-list {
+        margin-top: 0;
+    }
+    .job-list.birds-eye .skill-list li,
+    .job-list.birds-eye .software-list li {
+        display: inline;
+    }

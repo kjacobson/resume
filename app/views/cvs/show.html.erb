@@ -26,7 +26,7 @@
             <a href="<%= user_cv_path %>/softwares" rel="internal" title="See a list of software applications I've used professionally">Software</a>
         </h1>
 
-        <%= render :partial => "softwares/list", :locals => { :abbreviated => true} %>
+        <%= render :partial => "softwares/list", :locals => { :softwares => @softwares, :abbreviated => true} %>
     </section>
 
     <section class="secondary extended">
@@ -38,8 +38,6 @@
     </section>
 
     <section class="secondary extended">
-        <h1>Education</h1>
-        <h2>Northwestern University</h2>
-        <p>Graduated in 2009 with a BA (honors) in philosophy and a 3.495 GPA</p>
+        <%= render :partial => "cvs/education" %>
     </section>
 <% end %>

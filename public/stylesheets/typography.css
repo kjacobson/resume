@@ -72,6 +72,14 @@ footer p {
     line-height: 2.28571em;
 }
 
+/* BASIC FORMATTING */
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+
 /* LINKS */
 a:link,
 a:active,
@@ -118,6 +126,15 @@ section.primary th {
         font-size: 1.125em;
         line-height: 1.333em;
         margin-right: 0.6667em;
+    }
+section.primary .job-list.birds-eye .job-title {
+    font-size: 1.3125em;
+    line-height: 1.5em;
+}
+    .job-list.birds-eye .skill-list li:not(:last-child) a:after,
+    .job-list.birds-eye .software-list li:not(:last-child) a:after {
+        color: #444;
+        content: ",";
     }
 
 /* DETAILS (<dl>s) */
