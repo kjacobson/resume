@@ -1,8 +1,5 @@
 <%
     controller = params[:controller]
-    if controller == "cvs"
-        controller = "resumes"
-    end
     category = controller.capitalize
     id = params[:id]
     action = params[:action]
@@ -10,6 +7,9 @@
         category = ""
         item = ""
         identifier = ""
+    elsif controller == "cvs"
+        identifier = @cv.title
+        category = "Resumes"
     elsif controller == "softwares"
         category = "Software Programs"
         if !id.nil?
