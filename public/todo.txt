@@ -7,3 +7,8 @@
 - For desktop site, use box-flex, rems, etc.
 - LESS/SCSS
 - Make join table entry a multiselect process
+    - select multiple skills and softwares from job page
+    - select all skills for a discipline in one go
+    - make associations individually removeable but in rapid succession
+- Bulk specification of skills, softwares
+- Get some placeholder stuff up at / (home#index)
