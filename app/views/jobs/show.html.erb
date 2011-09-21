@@ -53,12 +53,14 @@
                 </p>
             </dd>
 
-            <dt>Reason for leaving</dt>
-            <dd>
-                <p>
-                    <%= decode(@job.reason) %>
-                </p>
-            </dd>
+            <% if !@job.reason.nil? and @job.reason != "" %>
+                <dt>Reason for leaving</dt>
+                <dd>
+                    <p>
+                        <%= decode(@job.reason) %>
+                    </p>
+                </dd>
+            <% end %>
         </dl>
     </section>
 
