@@ -10,3 +10,8 @@
 - Make join table entry a multiselect process
 - Years do not need to be tied to users/cvs
 - Make job status a dropdown
+    - select multiple skills and softwares from job page
+    - select all skills for a discipline in one go
+    - make associations individually removeable but in rapid succession
+- Bulk specification of skills, softwares
+- Get some placeholder stuff up at / (home#index)
