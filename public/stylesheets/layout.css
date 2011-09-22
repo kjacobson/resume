@@ -80,7 +80,7 @@ body {
             clear: right;
             float: right;
             margin: 0 0 1.125em;
-            padding: 0 1.25% 2em;
+            padding: 0 0 2em;
             overflow: auto;
             width: 37.5%; /* 2 full columns. 2 columns subtracting gutters */
         }
@@ -103,7 +103,7 @@ body {
             }
             section.extended .sub-list-organizational-module {
                 float: left;
-                margin: 0 1.25%;
+                margin: 0 1.25% 0 0;
                 width: 17.5%;
             }
                 section.extended .sub-list-organizational-module h2 {
