@@ -38,6 +38,9 @@ body {
                 .breadcrumbs li {
                     display: inline;
                 }
+                .breadcrumbs .breadcrumb-separator {
+                    padding: 0 0.75em;    
+                }
             #pseudoBranding {
                 float: right;
                 padding: 0 1.25%;
