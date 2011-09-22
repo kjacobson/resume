@@ -33,9 +33,10 @@ body {
 }
     section.primary {
         background: #fff;
+        border-top: 1px solid $tableStriping;
     }
     section.secondary {
-        background: #fdfdfd;
+        background: #fff;
         border-top: 1px solid $tableStriping;
     }
     footer {
@@ -45,6 +46,9 @@ body {
     }
 
 /* JOB (etc) details */
+section.primary .primart-type-short-desc {
+    color: $deemphasizedText;    
+}
 section.primary .primary-type-details dt {
     color: $deemphasizedText;
 }
