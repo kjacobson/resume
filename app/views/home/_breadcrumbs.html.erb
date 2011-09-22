@@ -49,7 +49,7 @@
     </li>
     <% if category != "" %>
         <li>
-            <span class="breadcrumb-separator">&gt;</span>
+            <span class="breadcrumb-separator">/</span>
             <% if action  == "index" %>
                 <a><%= category %></a>
             <% else %>
@@ -59,7 +59,7 @@
     <% end %>
     <% if action != "" && action != "index" %>
         <li>
-            <span class="breadcrumb-separator">&gt;</span>
+            <span class="breadcrumb-separator">/</span>
             <% if action == "show" and !id.nil? %>
                 <a><%= identifier %></a>
             <% else %>
