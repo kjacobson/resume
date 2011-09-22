@@ -55,7 +55,7 @@ body {
     }
     section.primary p {
         font-size: 1em;
-        line-height: 1.5em;
+        line-height: 1.875em;
         margin: 0 0 1.5em;
     }
         section.primary .job-list .job-title {
@@ -138,6 +138,8 @@ section.primary .job-list.birds-eye .job-title {
     }
 
 /* DETAILS (<dl>s) */
+.primary-type-details dt,
 .primary-type-details dd {
-    margin-bottom: 0.75em;
+    line-height: 1.875em;
+    margin-bottom: 0.375em;
 }
