@@ -30,7 +30,7 @@ body {
         header p {
             clear: both;
             display: block;
-            padding: 0 1.25%;
+            padding: 0 5%;
         }
             .breadcrumbs {
                 padding: 0.75em 0;
@@ -45,7 +45,7 @@ body {
     #main {
         overflow: hidden;
         /* bottom: 2em to compensate for the footer, plus 2em of real padding */
-        padding: 1em 0 4em;
+        padding: 1em 5% 4em;
     }
         section.primary {
             clear: left;
