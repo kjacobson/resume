@@ -18,7 +18,14 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to(:users, :notice => 'Login Successful') }
+        # TODO: smarter post-login logic
+        if @user_session.user.cvs && @user_session.user.cvs.count > 0
+            @user = @user_session.user
+            @cv = @user.cvs[0]
+            format.html { redirect_to(user_cv_path(@user, @cv))}
+        else
+            format.html { redirect_to(:users, :notice => 'Login Successful') }
+        end
         format.xml  { render :xml => @user_session, :status => :created, :location => @user_session }
       else
         format.html { render :action => "new" }
