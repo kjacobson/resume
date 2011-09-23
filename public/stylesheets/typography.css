@@ -90,10 +90,14 @@ h1 a,
 h2 a {
   text-decoration: none; }
 
-header .primary-type-short-desc {
-  font-style: italic; }
+.primary-type-short-desc {
+  font-style: italic;
+  padding-bottom: 1em; }
 
 /* TABLES */
+th, td {
+  text-align: left; }
+
 section.primary th {
   font-size: 1.3125em; }
 

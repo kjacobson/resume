@@ -33,7 +33,7 @@ footer {
   color: #fff; }
 
 /* JOB (etc) details */
-section.primary .primart-type-short-desc {
+.primary-type-short-desc {
   color: #888888; }
 
 section.primary .primary-type-details dt {
