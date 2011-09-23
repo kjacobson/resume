@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Resume</title>
+        <title>Resume for <%= @user.name %>: <%= @cv.title %></title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css" media="all" />
-        <link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" />
-        <link rel="stylesheet" type="text/css" href="/stylesheets/typography.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="/stylesheets/master.css" media="all" />
+        <!--<link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" media="all" />-->
         <link rel="stylesheet" type="text/css" href="/stylesheets/color.css" media="screen" />
     </head>
     <body class="<%= params[:controller] %> <%= params[:action] %>">
+        <div id="main">
+            <p class="notice"><%= flash[:notice] %></p>
+            <%= yield :head %>
+            <%= yield :main %>
+        </div>
         <header>
             <nav>
                 <%= render :partial => 'home/breadcrumbs' %>
             </nav>
-            <p class="notice"><%= flash[:notice] %></p>
-            <span id="pseudoBranding">R&eacute;sum&eacute;trix</span>
-            <%= yield :head %>
         </header>
-        <div id="main">
-            <%= yield :main %>
-        </div>
         <footer>
             <p>Copyright Kyle Jacobson, 2011</p>
         </footer>

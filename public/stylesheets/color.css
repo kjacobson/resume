@@ -39,18 +39,9 @@ section.primary .primart-type-short-desc {
 section.primary .primary-type-details dt {
   color: #888888; }
 
-/* HEADER */
-#pseudoBranding {
-  /* no fallback necessary, cause this is only necessary
-    if box-shadow is supported */
-  background: rgba(255, 255, 255, 0.6); }
-
 /* NAV */
 header nav {
-  background: #000;
-  -moz-box-shadow: 0 2px 20px #d3d3d3;
-  -webkit-box-shadow: 0 2px 20px #d3d3d3;
-  box-shadow: 0 2px 20px #d3d3d3; }
+  background: #000; }
 
 header nav a {
   color: #fff; }
@@ -77,7 +68,7 @@ h2 a:hover,
 h2 a:focus {
   color: #e08529; }
 
-header h2 {
+#main hgroup h2 {
   color: #888888; }
 
 /* TABLES */

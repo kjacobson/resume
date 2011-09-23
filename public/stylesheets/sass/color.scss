@@ -14,16 +14,7 @@
  * Table-striping: #f6f6f6;
  * almost gray: #e9e7e0;
  */
-$nearNeutral: #5f5245;
-$darkest: #bb6318;
-$middle: #e08529;
-$light: #f9ca7e;
-$lightest: #f5d99A;
-
-$defaultText: #444;
-$deemphasizedText: #888;
-$tableStriping: #f6f6f6;
-$almostGray: #e9e7e0;
+@import "color-vars";
 
 body {
     color: $defaultText;
@@ -52,19 +43,9 @@ section.primary .primary-type-details dt {
     color: $deemphasizedText;
 }
 
-/* HEADER */
-#pseudoBranding {
-    /* no fallback necessary, cause this is only necessary
-      if box-shadow is supported */
-    background: rgba(255,255,255,0.6);
-}
-
 /* NAV */
 header nav {
     background: #000;
-    -moz-box-shadow: 0 2px 20px #d3d3d3;
-    -webkit-box-shadow: 0 2px 20px #d3d3d3;
-    box-shadow: 0 2px 20px #d3d3d3;
 }
     header nav a {
         color: #fff;
@@ -94,7 +75,7 @@ h2 a:hover,
 h2 a:focus {
     color: $middle;
 }
-header h2 {
+#main hgroup h2 {
     color: $deemphasizedText;
 }
 
